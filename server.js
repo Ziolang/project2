@@ -73,7 +73,7 @@ function getParents(req, res){
 				console.log(err);
 			}
 			console.log(pop);
-			res.send(pop.rows);
+			res.send(pop);
 		});
 		pool.query(mother, function(err, mom) {
 		// If an error occurred...
@@ -82,7 +82,7 @@ function getParents(req, res){
 				console.log(err);
 			}
 			console.log(mom);
-			res.send(mom.rows);
+			res.send(mom);
 		});
 	});
 }
