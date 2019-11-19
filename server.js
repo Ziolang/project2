@@ -52,8 +52,7 @@ function getPerson(req, res){
 }
 
 function getParents(req, res){ 
-	var child = "SELECT * FROM Person WHERE Person.id =" + req.params['id'];
-	var relationship = "SELECT * FROM Relationship WHERE child.id = " + req.params['id'];
+	var relationship = "SELECT * FROM Relationship WHERE child = " + req.params['id'];
 	var father = "";
 	var mother = "";
 
