@@ -9,7 +9,7 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/getPerson', getPerson)
-  .get('/getParents/:id', getParent)
+  .get('/getParents/:id', getParents)
   .get('/getChild/:id', getChild)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
