@@ -74,7 +74,7 @@ function getParents(req, res){
 				console.log(err);
 			}
 			res.send(pop.rows);
-		}
+		});
 		pool.query(mother, function(err, mom) {
 		// If an error occurred...
 			if (err) {
@@ -82,7 +82,7 @@ function getParents(req, res){
 				console.log(err);
 			}
 			res.send(pop.rows);
-		}
+		});
 
 		// Log this to the console for debugging purposes.
 		console.log("Back from DB with result:");
