@@ -34,5 +34,17 @@ pool.query(sql, function(err, result) {
 });
 
 function getPerson(req, res){ 
-	res.send(req.params);
+	var sql = "SELECT * FROM Person";
+
+	pool.query(sql, function(err, result) {
+	// If an error occurred...
+	if (err) {
+		console.log("Error in query: ")
+		console.log(err);
+	}
+
+	// Log this to the console for debugging purposes.
+	console.log("Back from DB with result:");
+	res.send(result.rows);
+});
 }
