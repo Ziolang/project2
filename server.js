@@ -8,7 +8,7 @@ express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/getPerson/:id', getPerson)
+  .get('/getPerson/', getPerson)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
@@ -34,5 +34,5 @@ pool.query(sql, function(err, result) {
 });
 
 function getPerson(req, res){ 
-	var person = req.params;
+	res.send(req.params);
 }
