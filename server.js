@@ -90,7 +90,7 @@ function getParents(req, res){
 	});
 }
 
-function getPerson(req, res){ 
+function getChild(req, res){ 
 	var sql = "SELECT * FROM Person";
 
 	pool.query(sql, function(err, result) {
