@@ -72,6 +72,10 @@ function getParents(req, res){
 				console.log("Error in query: ")
 				console.log(err);
 			}
+			console.log(pop);
+		    console.log("Number of rows affected : " + pop.affectedRows);
+		    console.log("Number of records affected with warning : " + pop.warningCount);
+		    console.log("Message from MySQL Server : " + pop.message);
 			res.send(pop.rows);
 		});
 		pool.query(mother, function(err, mom) {
@@ -80,12 +84,12 @@ function getParents(req, res){
 				console.log("Error in query: ")
 				console.log(err);
 			}
-			res.send(pop.rows);
+			console.log(mom);
+		    console.log("Number of rows affected : " + mom.affectedRows);
+		    console.log("Number of records affected with warning : " + mom.warningCount);
+		    console.log("Message from MySQL Server : " + mom.message);
+			res.send(mom.rows);
 		});
-
-		// Log this to the console for debugging purposes.
-		console.log("Back from DB with result:");
-		res.send(result.rows);
 	});
 }
 
