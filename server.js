@@ -24,8 +24,6 @@ function getCells (req, res) {
 	pool.query(sql, function(err, result) {
 		if (err) console.log(err);
 		const rows = result.rows;
-
-		res.send(rows);
 		res.render("pages/grid", { rows: rows });
 	});
 }
