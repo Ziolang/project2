@@ -12,24 +12,13 @@
 	<% include ../partials/navbar %>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="display col-sm-8">
+				<
 			</div>
 			<div class="display col-sm-4">
-				<% rows.forEach((row) => { %>
-				  	<p>Name: <%= row.name %><br/>
-				  	Content: <%= row.content %><br/>
-				  	Color: <%= row.color %><br/>
-				  	DoesBlock?: <%= row.blocks %><br/>
-				  	HasDurable?: <%= row.durability %><br/>
-				  	Physical Resistance: <%= row.pr %><br/>
-				  	Magical Resistance: <%= row.mr %><br/>
-				  	Details: <%= row.detail %></p>
-			  	<% }) %>
-			</div>
-			<div class="display col-sm-4">
-				<select>
+				<select name="cell">
 					<% rows.forEach((row) => { %>
-					<option name="<%= row.name %>"><%= row.name %></option>
+					<option value="<%= row.id %>"><%= row.name %></option>
 					<% }) %>
 				</select>
 			</div>
