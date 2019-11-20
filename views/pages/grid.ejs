@@ -40,13 +40,14 @@
 				%>
 				<div style="" id="<%= id %>"><h2><%= row.name %> Cell</h2>
 					<span style="font-family: 'Inconsolata', monospace;color:#<%= row.color %>">{<%= row.content %>}</span><br/>
+					<p>
 					<% if (row.durability > 0){ %>
-						<p>Durability: %<%= row.durability %></p>
-						<p>Physical Resistance: <%= row.pr %></p>
-						<p>Magical Resistance: <%= row.mr %></p>
+						Durability: %<%= row.durability %>
+						Physical Resistance: <%= row.pr %>
+						Magical Resistance: <%= row.mr %>
 					<% } %>
-					<p>Blocks Movement?: <%= row.blocks %></p>
-					<p>Details: <%= row.detail %></p>
+					Blocks Movement?: <%= row.blocks %>
+					Details: <%= row.detail %></p>
 				</div>
 				<% }) %>
 			</div>
