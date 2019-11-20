@@ -20,12 +20,13 @@ const pool = new Pool(
 
 function getCells (req, res) {
 	const sql = "SELECT * FROM Cells";
-
+	
 	pool.query(sql, function(err, result) {
 		if (err) console.log(err);
-		
-		console.log(result.rows);
+		const rows = result.rows;
+		console.log(rows);
 
-		res.send(result.rows);
+		res.send(rows);
+		res.render("pages/grid", { rows: rows });
 	});
 }
