@@ -5,16 +5,16 @@ CREATE TABLE Cells (
 	color varchar(6), 
 	blocks boolean NOT NULL,
 	durability int,
-	pr int,
-	mr int, 
+	pr varchar(20),
+	mr varchar(20), 
 	detail varchar(1000)
 );
 INSERT INTO Cells
 VALUES 
-	(DEFAULT, 'Tree', 'T', '009617', true, 100, 3, 1, 'A vertical log with leaves!'),
+	(DEFAULT, 'Tree', 'T', '009617', true, 100, 'Moderate.', 'Very Low.', 'A vertical log with leaves!'),
 	(DEFAULT, 'Water', '~', '001eff', true, NULL, NULL, NULL, 'A calm bit of H2O.'),
-	(DEFAULT, 'Wall', 'W', '8f8f8f', true, 100, 4, 4, 'A solid obsticle. It could be damaged, but it looks pretty sturdy.'),
-	(DEFAULT, 'Door', 'D', '8f8f8f', true, 100, 2, 2, 'It can be opened.');
+	(DEFAULT, 'Wall', 'W', '8f8f8f', true, 100, 'High.', 'High', 'A solid obsticle. It could be damaged, but it looks pretty sturdy.'),
+	(DEFAULT, 'Door', 'D', '8f8f8f', true, 100, 'Low.', 'Low.', 'It can be opened.');
 
 
 CREATE TABLE Positions ( 
