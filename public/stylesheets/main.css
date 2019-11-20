@@ -43,6 +43,8 @@ li a:hover {
 	color:white;
 	font-family: 'Inconsolata', monospace;
 	text-align:center;
+	font-size: 16px;
+	font-size: 9vw;
 }
 
 body {
