@@ -14,8 +14,17 @@
 	<div class="container">
 		<div class="row">
 			<div class="grid col-sm-8">
-				<% for (var i = 0; i < 9; i++) { %>
-				<span>{ }</span> <span>{ }</span> <span>{ }</span> <span>{ }</span> <span>{ }</span> <span>{ }</span> <span>{ }</span> <span>{ }</span> <span>{ }</span><br/>
+				<% 
+					var letter = 'A';
+					var position = '65'
+					var final = '';
+					for (var r = 0; r < 9; r++) {
+						for (var c = 0; c < 9; c++) { 
+						letter = String.fromCharCode(position);
+						final = letter + (c + 1)%>
+				<span id="<%= final %>">{ }</span>&nbsp
+				<% } %>
+				<br/>
 				<% } %>
 			</div>
 			<div class="display col-sm-4">
