@@ -42,6 +42,7 @@ li a:hover {
 	overflow:auto;
 	color:white;
 	font-family: 'Inconsolata', monospace;
+	text-align:center;
 }
 
 body {
