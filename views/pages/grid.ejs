@@ -22,7 +22,7 @@
 						for (var c = 0; c < 9; c++) { 
 						letter = String.fromCharCode(position);
 						final = letter + (c + 1)%>
-				<span id="<%= final %>">{ }</span>&nbsp
+				<span id="<%= final %>">{ }</span>
 				<% } %>
 				<br/>
 				<% position++; } %>
@@ -33,6 +33,17 @@
 					<option value="<%= row.id %>"><%= row.name %></option>
 					<% }) %>
 				</select>
+				<% 
+					var id = "detail";
+					rows.forEach((row) => { 
+					id += row.id;
+				%>
+				<div style="" id="<%= id %>"><h2><%= row.name %> Cell</h2>
+					<span style="color:#<%= row.color %>">{<%= row.content %>}</span><br/>
+					<p>Durability:</p>
+					<p></p>
+				</div>
+				<% }) %>
 			</div>
 		</div>
 	</div>
