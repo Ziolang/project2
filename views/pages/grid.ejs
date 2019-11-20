@@ -26,7 +26,12 @@
 				  	Details: <%= row.detail %></p>
 			  	<% }) %>
 			</div>
-			<div class="col-sm-4">
+			<div class="display col-sm-4">
+				<select>
+					<% rows.forEach((row) => { %>
+					<option name="<%= row.name %>"><%= row.name %></option>
+					<% }) %>
+				</select>
 			</div>
 		</div>
 	</div>
