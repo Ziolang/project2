@@ -1,0 +1,67 @@
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #b00000;
+	position:sticky;
+	top:0;
+	z-index:1;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #d10000;
+}
+
+.select {
+	background-color: #d10000;
+	border: 3px solid #b00000;
+	height:300px;
+	padding:20px;
+}
+
+body {
+	background-image: url(final.jpg);
+	background-size: cover;
+}
+
+.search {
+	background-color: #d10000;
+	border: 3px solid #b00000;
+	padding:15px;
+	display:block;
+	overflow:auto;
+	color:white;
+}
+
+.center {
+	text-align:center;
+}
+
+.unitresult {
+	color:white;
+}
+
+.unitresult:hover {
+	color:grey;
+}
+.unitresult:visited {
+	color:white;
+}
+
+.unitbtn {
+	text-align:center;
+	width:80%;
+}
