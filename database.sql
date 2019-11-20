@@ -2,7 +2,7 @@ CREATE TABLE Cells (
 	id SERIAL NOT NULL PRIMARY KEY, 
 	name varchar(100) NOT NULL, 
 	content char NOT NULL, 
-	hexColor varchar, 
+	hexColor varchar(6), 
 	blocks boolean NOT NULL,
 	durability boolean,
 	pr int,
