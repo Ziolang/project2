@@ -2,13 +2,20 @@ CREATE TABLE Cells (
 	id SERIAL NOT NULL PRIMARY KEY, 
 	name varchar(100) NOT NULL, 
 	content char NOT NULL, 
-	hexColor varchar(6), 
+	color varchar(6), 
 	blocks boolean NOT NULL,
-	durability boolean,
+	durability int,
 	pr int,
 	mr int, 
 	detail varchar(1000)
 );
+INSERT INTO Cells
+VALUES 
+	(DEFAULT, 'Tree', 'T', '009617', true, 100, 3, 1, 'A vertical log with leaves!'),
+	(DEFAULT, 'Water', '~', '001eff', true, NULL, NULL, NULL, 'A calm bit of H2O.'),
+	(DEFAULT, 'Wall', 'W', '8f8f8f', true, 100, 4, 4, 'A solid obsticle. It could be damaged, but it looks pretty sturdy.'),
+	(DEFAULT, 'Door', 'D', '8f8f8f', true, 100, 2, 2, 'It can be opened.');
+
 
 CREATE TABLE Positions ( 
 	id SERIAL NOT NULL PRIMARY KEY, 
@@ -16,13 +23,6 @@ CREATE TABLE Positions (
 	cell_id int NOT NULL REFERENCES Cells(id), 
 	grid_name varchar(100) NOT NULL
 );
-
-INSERT INTO Cells
-VALUES 
-	(DEFAULT, 'Tree', 'T', '009617', true, true, 3, 1, 'A vertical log with leaves!'),
-	(DEFAULT, 'Water', '~', '001eff', true, false, NULL, NULL, 'A calm bit of H2O.'),
-	(DEFAULT, 'Wall', 'W', '8f8f8f', true, true, 4, 4, 'A solid obsticle. It could be damaged, but it looks pretty sturdy.'),
-	(DEFAULT, 'Door', 'D', '8f8f8f', true, true, 2, 2, 'It can be opened.');
 
 INSERT INTO Positions
 VALUES 
