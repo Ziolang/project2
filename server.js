@@ -25,7 +25,7 @@ function getCells (req, res) {
 		if (err) console.log(err);
 		
 		console.log(result.rows);
-	});
 
-	res.send(result.rows);
+		res.send(result.rows);
+	});
 }
