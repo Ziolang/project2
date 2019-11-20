@@ -41,7 +41,7 @@ li a:hover {
 	display:block;
 	overflow:auto;
 	color:white;
-	font-variant-numeric: tabular-nums;
+	font-family: 'IBM Plex Mono', monospace;
 }
 
 body {
