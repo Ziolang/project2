@@ -16,16 +16,16 @@
 			<div class="grid col-sm-8">
 				<% 
 					var letter = 'A';
-					var position = '65'
+					var position = 65;
 					var final = '';
 					for (var r = 0; r < 9; r++) {
 						for (var c = 0; c < 9; c++) { 
 						letter = String.fromCharCode(position);
 						final = letter + (c + 1)%>
 				<span id="<%= final %>">{ }</span>&nbsp
-				<% } %>
+				<% position++; } %>
 				<br/>
-				<% } %>
+				<% position = 65} %>
 			</div>
 			<div class="display col-sm-4">
 				<select name="cell">
