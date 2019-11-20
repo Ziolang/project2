@@ -49,3 +49,11 @@ body {
 	background-image: url(../final.jpg);
 	background-size: cover;
 }
+
+.cell {
+	cursor: pointer;
+}
+
+.cell:hover {
+	opacity:.7;
+}

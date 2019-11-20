@@ -8,6 +8,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="brush.js"></script>
 </head>
 <body>
 	<% include ../partials/navbar %>
@@ -22,7 +23,7 @@
 						for (var c = 0; c < 9; c++) { 
 						letter = String.fromCharCode(position);
 						final = letter + (c + 1)%>
-				<span id="<%= final %>">{ }</span>
+				<span id="cell <%= final %>">{ }</span>
 				<% } %>
 				<br/>
 				<% position++; } %>
@@ -39,7 +40,7 @@
 					id += row.id;
 				%>
 				<div style="" id="<%= id %>"><h2><%= row.name %> Cell</h2>
-					<span style="font-family: 'Inconsolata', monospace;color:#<%= row.color %>">{<%= row.content %>}</span><br/>
+					<span id="brush" style="font-family: 'Inconsolata', monospace;color:#<%= row.color %>">{<%= row.content %>}</span><br/>
 					<p>
 					<% if (row.durability > 0){ %>
 						Durability: %<%= row.durability %>
