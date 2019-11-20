@@ -19,16 +19,14 @@
 			</div>
 			<div class="col-sm-4">
 				<% rows.forEach((row) => { %>
-					<a href="/row/<%= row.id %>">
-					  	<p>Name: <%= row.name %></p>
-					  	<p>Content: <%= row.content %></p>
-					  	<p>Color: <%= row.color %></p>
-					  	<p>DoesBlock?: <%= row.blocks %></p>
-					  	<p>HasDurable?: <%= row.durability %></p>
-					  	<p>Physical Resistance: <%= row.pr %></p>
-					  	<p>Magical Resistance: <%= row.mr %></p>
-					  	<p>Details: <%= row.detail %></p>
-					</a>
+				  	<p>Name: <%= row.name %></p>
+				  	<p>Content: <%= row.content %></p>
+				  	<p>Color: <%= row.color %></p>
+				  	<p>DoesBlock?: <%= row.blocks %></p>
+				  	<p>HasDurable?: <%= row.durability %></p>
+				  	<p>Physical Resistance: <%= row.pr %></p>
+				  	<p>Magical Resistance: <%= row.mr %></p>
+				  	<p>Details: <%= row.detail %></p>
 			  	<% }) %>
 			</div>
 			<div class="col-sm-4">
