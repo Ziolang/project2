@@ -34,8 +34,10 @@
 					<option value="<%= row.id %>"><%= row.name %></option>
 					<% }) %>
 				</select>
-				<% rows.forEach((row) => { %>
-				<span id="brush" style="visibility:hidden;font-family: 'Inconsolata', monospace;color:#<%= row.color %>">{<%= row.content %>}</span>
+				<%
+				var count = 0; 
+				rows.forEach((row) => { %>
+				<span id="brush<%= row.id %>" style="visibility:hidden;font-family: 'Inconsolata', monospace;color:#<%= row.color %>">{<%= row.content %>}</span>
 				<% }) %>
 				<% 
 					var id = "detail";
