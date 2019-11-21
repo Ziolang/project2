@@ -29,7 +29,7 @@
 				<% position++; } %>
 			</div>
 			<div class="display col-sm-4">
-				Brush: <select name="cell" onchange="selectBrush(this);">
+				Brush: <select name="cell">
 					<% rows.forEach((row) => { %>
 					<option value="<%= row.id %>"><%= row.name %></option>
 					<% }) %>
@@ -65,11 +65,13 @@
 	</div>
 
 	<script>
-		/*$(document).ready(function(){
+		$(document).ready(function(){
   			$("select").change(function(){
+
+
     			var item = "." + this.value;
-    			$(item).css("visibility", "hidden");
+    			$(item).css("visibility", "visible");
   			});
-		});*/
+		});
 	</script>
 </body>
