@@ -36,12 +36,12 @@
 				</select>
 				<%
 				rows.forEach((row) => { %>
-				<span class="<%= row.id %>" style="visibility:none;font-family: 'Inconsolata', monospace;color:#<%= row.color %>">{<%= row.content %>}</span>
+				<span class="<%= row.id %>" style="display:none;font-family: 'Inconsolata', monospace;color:#<%= row.color %>">{<%= row.content %>}</span>
 				<% }) %>
 				<% 
 					rows.forEach((row) => { 
 				%>
-				<div style="visibility:none;" class="<%= row.id %>"><h2><%= row.name %> Cell</h2>
+				<div style="display:none;" class="<%= row.id %>"><h2><%= row.name %> Cell</h2>
 					<br/>
 					<p>
 					<% if (row.durability > 0){ %>
@@ -57,7 +57,7 @@
 				var count = 0; 
 				rows.forEach((row) => { count++; });
 				%>
-				<input type="number" id="count" value="<%= count %>" style="visibility:none;">
+				<input type="number" id="count" value="<%= count %>" style="display:none;">
 			</div>
 		</div>
 	</div>
@@ -68,7 +68,7 @@
 
 
     			var item = "." + this.value;
-    			$(item).css("visibility", "visible");
+    			$(item).css("display", "default");
   			});
 		});
 	</script>
