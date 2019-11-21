@@ -82,9 +82,9 @@
   				var brush = "brush" + $("select").val();
   				var color = $(brush).css("color");
   				var text = $(brush).html();
-
-  				$(this).css("color", color);
-  				$(this).html(text);
+  				var that = this;
+  				$(that).css("color", color);
+  				$(that).html(text);
   			});
 		});
 	</script>
