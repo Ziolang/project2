@@ -9,15 +9,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="brush.js"></script>
-	<script>
-		$(document).ready(function(){
-  			$("select").change(function(){
-    			var item = ".brush" + $(this).attr("id");
-    			$(".blank").css("visibility", "hidden");
-    			$(item).css("visibility", "visible");
-  			});
-		});
-	</script>
 </head>
 <body>
 	<% include ../partials/navbar %>
@@ -68,4 +59,14 @@
 			</div>
 		</div>
 	</div>
+	
+	<script>
+		$(document).ready(function(){
+  			$("select").change(function(){
+    			var item = ".brush" + $(this).attr("id");
+    			$(".blank").css("visibility", "hidden");
+    			$(item).css("visibility", "visible");
+  			});
+		});
+	</script>
 </body>
