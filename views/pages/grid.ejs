@@ -35,14 +35,14 @@
 					<% }) %>
 				</select>
 				<% rows.forEach((row) => { %>
-				<span id="brush" style="font-family: 'Inconsolata', monospace;color:#<%= row.color %>">{<%= row.content %>}</span>
+				<span id="brush" style="visibility:hidden;font-family: 'Inconsolata', monospace;color:#<%= row.color %>">{<%= row.content %>}</span>
 				<% }) %>
 				<% 
 					var id = "detail";
 					rows.forEach((row) => { 
 					id += row.id;
 				%>
-				<div style="" id="<%= id %>"><h2><%= row.name %> Cell</h2>
+				<div style="visibility:hidden;" id="<%= id %>"><h2><%= row.name %> Cell</h2>
 					<br/>
 					<p>
 					<% if (row.durability > 0){ %>
