@@ -54,11 +54,11 @@
 					<br/>
 					<p>
 					<% if (row.durability > 0){ %>
-						Durability: %<%= row.durability %>
-						Physical Resistance: <%= row.pr %>
-						Magical Resistance: <%= row.mr %>
+						Durability: <%= row.durability %>%<br>
+						Physical Resistance: <%= row.pr %><br>
+						Magical Resistance: <%= row.mr %><br>
 					<% } %>
-					Blocks Movement?: <%= row.blocks %>
+					Blocks Movement?: <%= row.blocks %><br>
 					Details: <%= row.detail %></p>
 				</div>
 				<% }) %>
