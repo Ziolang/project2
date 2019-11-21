@@ -36,7 +36,7 @@
 				</select>
 				<%
 				rows.forEach((row) => { %>
-				<span class="brush <%= row.id %>" style="display:none;color:#<%= row.color %>">{<%= row.content %>}</span>
+				<span class="preview <%= row.id %>" id="brush<%= row.id %>" style="display:none;color:#<%= row.color %>">{<%= row.content %>}</span>
 				<% }) %>
 				<% 
 					rows.forEach((row) => { 
@@ -73,6 +73,18 @@
 
     			item = "." + this.value;
     			$(item).css("display", "inline");
+  			});
+		});
+	</script>
+	<script>
+		$(document).ready(function(){
+  			$(".cell").click(function(){
+  				var brush = "brush" + $("select").val();
+  				var color = $(brush).css("color");
+  				var text = $(brush).html();
+
+  				$(this).css("color", color);
+  				$(this).html(text);
   			});
 		});
 	</script>
