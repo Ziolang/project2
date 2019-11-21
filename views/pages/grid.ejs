@@ -36,7 +36,7 @@
 				</select>
 				<%
 				rows.forEach((row) => { %>
-				<span class="<%= row.id %>" style="font-size:2vw;display:none;font-family: 'Inconsolata', monospace;color:#<%= row.color %>">{<%= row.content %>}</span>
+				<span class="brush <%= row.id %>" style="display:none;color:#<%= row.color %>">{<%= row.content %>}</span>
 				<% }) %>
 				<% 
 					rows.forEach((row) => { 

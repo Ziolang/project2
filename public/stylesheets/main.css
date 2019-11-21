@@ -62,3 +62,11 @@ body {
 	background:black;
 	color:white;
 }
+
+.brush {
+	cursor: pointer;
+	background:white;
+	font-family: 'Inconsolata', monospace;
+	font-size: 16px;
+	font-size: 2vw;
+}
