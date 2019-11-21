@@ -29,13 +29,12 @@
 				<% position++; } %>
 			</div>
 			<div class="display col-sm-4">
-				Brush: <select name="cell">
+				Brush: <select name="cell" onchange="selectBrush(this);">
 					<% rows.forEach((row) => { %>
 					<option value="<%= row.id %>"><%= row.name %></option>
 					<% }) %>
 				</select>
 				<%
-				var count = 0; 
 				rows.forEach((row) => { %>
 				<span class="<%= row.id %>" style="font-family: 'Inconsolata', monospace;color:#<%= row.color %>">{<%= row.content %>}</span>
 				<% }) %>
@@ -56,16 +55,21 @@
 					Details: <%= row.detail %></p>
 				</div>
 				<% }) %>
+				<%
+				var count = 0; 
+				rows.forEach((row) => { count++; }
+				%>
+				<input type="number" id="count" value="<%= count %>" style="visibility:hidden;">
 			</div>
 		</div>
 	</div>
 
 	<script>
-		$(document).ready(function(){
+		/*$(document).ready(function(){
   			$("select").change(function(){
     			var item = "." + this.value;
     			$(item).css("visibility", "hidden");
   			});
-		});
+		});*/
 	</script>
 </body>
