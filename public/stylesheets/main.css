@@ -63,7 +63,7 @@ body {
 	color:white;
 }
 
-.brush {
+.preview {
 	cursor: pointer;
 	background:white;
 	font-family: 'Inconsolata', monospace;

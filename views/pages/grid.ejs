@@ -35,7 +35,7 @@
 					<option value="<%= row.id %>"><%= row.name %></option>
 					<% }) %>
 				</select>
-				<span class="preview 0" id="brush0" style="display:none;color:black">{ }</span>
+				<span class="preview 0" id="brush0" style="color:black">{ }</span>
 				<%
 				var brushid;
 				rows.forEach((row) => { 
@@ -43,7 +43,7 @@
 				%>
 				<span class="preview <%= row.id %>" id="<%= brushid %>" style="display:none;color:#<%= row.color %>">{<%= row.content %>}</span>
 				<% }) %>
-				<div style="display:none;" class="0"><h2>Blank Cell</h2>
+				<div class="0"><h2>Blank Cell</h2>
 					<br/>
 					<p>This cell is completely empty and has no properties.</p>
 				</div>
