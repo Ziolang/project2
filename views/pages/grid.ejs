@@ -32,8 +32,9 @@
 				Brush: <select name="cell">
 					<% rows.forEach((row) => { %>
 					<option value="<%= row.id %>"><%= row.name %></option>
-					
+					<% }) %>
 				</select>
+				<% rows.forEach((row) => { %>
 				<span id="brush" style="font-family: 'Inconsolata', monospace;color:#<%= row.color %>">{<%= row.content %>}</span>
 				<% }) %>
 				<% 
