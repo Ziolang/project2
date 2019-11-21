@@ -35,7 +35,7 @@ li a:hover {
 }
 
 .grid {
-	background-color: lightgrey;
+	background-color: #d10000;
 	border: 3px solid #b00000;
 	padding:15px;
 	display:block;
@@ -54,6 +54,7 @@ body {
 
 .cell {
 	cursor: pointer;
+	background:white;
 }
 
 .cell:hover {
