@@ -65,9 +65,13 @@
 	<script>
 		$(document).ready(function(){
   			$("select").change(function(){
+  				var item;
+  				for (var i = 1; i <= $(count).value; i++) {
+  					item = "." + i;
+  					$(item).css("display", "inline");
+  				}
 
-
-    			var item = "." + this.value;
+    			item = "." + this.value;
     			$(item).css("display", "inline");
   			});
 		});
