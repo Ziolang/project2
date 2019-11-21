@@ -63,7 +63,7 @@
 	<script>
 		$(document).ready(function(){
   			$("select").change(function(){
-    			var item = "#brush" + $(this).value;
+    			var item = $(this).value;
     			$(item).css("visibility", "hidden");
   			});
 		});
