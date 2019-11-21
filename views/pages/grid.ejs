@@ -13,7 +13,7 @@
 		$(document).ready(function(){
   			$("select").change(function(){
     			var item = ".brush" + $(this).attr("id");
-    			$("option").css("visibility", "hidden");
+    			$(".blank").css("visibility", "hidden");
     			$(item).css("visibility", "visible");
   			});
 		});
@@ -46,7 +46,7 @@
 				<%
 				var count = 0; 
 				rows.forEach((row) => { %>
-				<span id="brush<%= row.id %>" style="visibility:hidden;font-family: 'Inconsolata', monospace;color:#<%= row.color %>">{<%= row.content %>}</span>
+				<span id="blank brush<%= row.id %>" style="visibility:hidden;font-family: 'Inconsolata', monospace;color:#<%= row.color %>">{<%= row.content %>}</span>
 				<% }) %>
 				<% 
 					var id = "detail";
