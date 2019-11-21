@@ -35,7 +35,7 @@ li a:hover {
 }
 
 .grid {
-	background-color: #d10000;
+	background-color: lightgrey;
 	border: 3px solid #b00000;
 	padding:15px;
 	display:block;
@@ -58,4 +58,5 @@ body {
 
 .cell:hover {
 	opacity:.7;
+	background:black;
 }
