@@ -35,8 +35,11 @@
 					<% }) %>
 				</select>
 				<%
-				rows.forEach((row) => { %>
-				<span class="preview <%= row.id %>" id="brush<%= row.id %>" style="display:none;color:#<%= row.color %>">{<%= row.content %>}</span>
+				var brushid;
+				rows.forEach((row) => { 
+				brushid = "brush" + row.id;
+				%>
+				<span class="preview <%= row.id %>" id="<%= brushid %>" style="display:none;color:#<%= row.color %>">{<%= row.content %>}</span>
 				<% }) %>
 				<% 
 					rows.forEach((row) => { 
