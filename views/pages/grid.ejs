@@ -58,7 +58,9 @@
 						Physical Resistance: <%= row.pr %><br>
 						Magical Resistance: <%= row.mr %><br>
 					<% } %>
-					Blocks Movement?: <%= row.blocks %><br>
+					<% if (row.blocks){ %>
+					Blocks Movement: Cannot enter or pass through this cell.<br>
+					<% } %>
 					Details: <%= row.detail %></p>
 				</div>
 				<% }) %>
