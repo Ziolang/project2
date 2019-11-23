@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="brush.js"></script>
+</head>
+<body>
+	<% include ../partials/navbar %>
+	<div class="container">
+		<div class="row">
+			<div class="grid col-sm-8">
+				<% 
+					var letter = 'A';
+					var position = 65;
+					var final = '';
+					for (var r = 0; r < 9; r++) {
+						for (var c = 0; c < 9; c++) { 
+						letter = String.fromCharCode(position);
+						final = letter + (c + 1)%>
+				<span class="cell" id="<%= final %>">{ }</span>
+				<% } %>
+				<br/>
+				<% position++; } %>
+			</div>
+			<div class="display col-sm-4">
+				Brush: <select name="cell" onchange="checkDB(this)">
+					<option value="0">Blank</option>
+					<% rows.forEach((row) => { %>
+					<option value="<%= row.id %>"><%= row.name %></option>
+					<% }) %>
+				</select>
+				<span class="preview 0" id="brush0" style="color:black">{ }</span>
+				<%
+				var brushid;
+				rows.forEach((row) => { 
+				brushid = "brush" + row.id;
+				%>
+				<span class="preview <%= row.id %>" id="<%= brushid %>" style="display:none;color:#<%= row.color %>">{<%= row.content %>}</span>
+				<% }) %>
+				<div class="0"><h2>Blank Cell</h2>
+					<br/>
+					<p>This cell is completely empty and has no properties.</p>
+				</div>
+				<% 
+					rows.forEach((row) => { 
+				%>
+				<div style="display:none;" class="<%= row.id %>"><h2><%= row.name %> Cell</h2>
+					<br/>
+					<p>
+					<% if (row.durability > 0){ %>
+						Durability: <%= row.durability %>%<br>
+						Physical Resistance: <%= row.pr %><br>
+						Magical Resistance: <%= row.mr %><br>
+					<% } %>
+					<% if (row.blocks){ %>
+					Blocks Movement: Cannot enter or pass through this cell.<br>
+					<% } %>
+					Details: <%= row.detail %></p>
+				</div>
+				<% }) %>
+				<%
+				var count = 0; 
+				rows.forEach((row) => { count++; });
+				%>
+				<input type="number" id="count" value="<%= count %>" style="display:none;">
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+  			$("select").change(function(){
+  				var item;
+  				for (var i = 0; i <= $(count).val(); i++) {
+  					item = "." + i;
+  					$(item).css("display", "none");
+  				}
+
+    			item = "." + this.value;
+    			$(item).css("display", "inline");
+  			});
+		});
+	</script>
+	<script>
+		$(document).ready(function(){
+  			$(".cell").click(function(){
+  				var brush = "#brush" + $("select").val();
+  				var color = $(brush).css("color");
+  				var text = $(brush).html();
+  				var that = $(this);
+  				$(that).css("color", color);
+  				$(that).html(text);
+  			});
+		});
+	</script>
+</body>
