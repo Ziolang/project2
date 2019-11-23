@@ -4,6 +4,10 @@ function getCellById(id, callback) {
 		if (err) console.log(err);
 		callback(null, result.row[0]);
 	});*/
+
+	var result = {id: id, name: "tree"};
+
+	callback(result);
 }
 
 module.exports = {
