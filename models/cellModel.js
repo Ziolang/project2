@@ -7,7 +7,7 @@ function getCellById(id, callback) {
 
 	var result = {id: id, name: "tree"};
 
-	callback(result);
+	callback(null, result);
 }
 
 module.exports = {
