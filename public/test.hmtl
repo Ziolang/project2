@@ -11,9 +11,5 @@
 	<script src="checkdb.js"></script>
 </head>
 <body>
-	<form method="get" action="/getCell">
-	<input type="number">
-	<input type="submit">
-	<br>
-	<h1 id="result"></h1>
+	<input type="number" id="cell"> <button onclick="searchById()">Get Cell</button>
 </body>
