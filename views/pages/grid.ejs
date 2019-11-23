@@ -29,7 +29,7 @@
 				<% position++; } %>
 			</div>
 			<div class="display col-sm-4">
-				Brush: <select name="cell">
+				Brush: <select name="cell" onchange="checkDB(this)">
 					<option value="0">Blank</option>
 					<% rows.forEach((row) => { %>
 					<option value="<%= row.id %>"><%= row.name %> Cell</option>
