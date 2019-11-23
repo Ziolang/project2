@@ -1,4 +1,5 @@
 function checkDB(select) {
+	const { Pool } = require('pg');
 
 	const sql = "SELECT * FROM Cells WHERE id = " + select.value;
 	
