@@ -1,15 +1,8 @@
-function checkDB(select) {
-	const { Pool } = require('pg');
+function searchById() {
+	console.log("Searching by ID");
 
-	const sql = "SELECT * FROM Cells WHERE id = " + select.value;
-	
-	pool.query(sql, function(err, result) {
-		if (err) console.log(err);
-		const item = result.rows[0];
-		$('.preview').html('{' + item.content + '}');
-		$('.preview').css("color", "#" + item.color);
-		var brush = "#brush" + $("select").val();
-	});
+	var cell = $('#cell').val();
+	console.log("Cell:" + cell)
 }
 
 
