@@ -26,12 +26,12 @@ function searchById() {
 			if (cell["durability"] > 0) {
 				details += "Durability:" + cell["durability"] + "%<br>" +
 				"Physical Resistance:" +  cell["pr"] + "<br>" +
-				"Magical Resistance:" + cell["mr"] + "<%= row.mr %><br>";
+				"Magical Resistance:" + cell["mr"] + "<br>";
 			}
 			if (row.blocks){
 				details += "Blocks Movement: Cannot enter or pass through this cell.<br>";
 			}
-			details += "Details: <%= row.detail %></p>";
+			details += "Details: " + row["detail"] + "</p>";
 			$(".details").html(details);
 		})
 	}
