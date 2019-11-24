@@ -80,7 +80,7 @@ function applyCell(cell) {
 	
 	$(cell).css("color", color);
 	$(cell).html(text);
-	$(cell).revomeClass();
+	$(cell).removeClass();
 	$(cell).addClass(id);
 }
 
