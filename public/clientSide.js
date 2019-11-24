@@ -63,6 +63,6 @@ function applyBrush(cell) {
 	var color = $(".preview").css("color");
 	var text = $(".preview").html();
 	
-	cell.css("color", color);
-	cell.html(text);
+	$(cell).css("color", color);
+	$(cell).html(text);
 }
