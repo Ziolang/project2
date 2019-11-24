@@ -1,11 +1,13 @@
 function searchById() {
-	var content;
-	var color;
+	let content;
+	let color;
 	var id = Number($('#selector').val());
 
 	if (id == 0) {
 		content = "{ }";
 	  	color = "black";
+	  	$(".preview").css("color", color);
+		$(".preview").html(content);
 	}
 	else {
 		console.log("Searching by ID");
@@ -16,11 +18,11 @@ function searchById() {
 			console.log("Got: " + cell["name"]);
 	  		content = "{" + cell["content"] + "}";
 	  		color = "#" + cell["color"];
-	console.log("color: " + color + " content: " + content);
-	$(".preview").css("color", color);
-	$(".preview").html(content);
+	  		$(".preview").css("color", color);
+			$(".preview").html(content);
 		})
 	}
+	
 }
 
 
