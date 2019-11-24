@@ -5,7 +5,8 @@ const pool = new Pool({connectionString: connectionString });
 function getCellById(id, callback) {
 	console.log("Searching for id: " + id)
 	var sql = "SELECT * FROM Cells WHERE id = " + id;
-	pool.query(sql, function(err, result) {
+	var params = [id];
+	pool.query(sql, params, function(err, result) {
 		if (err) console.log(err);
 		console.log(result.rows);
 		callback(null, result.rows);
