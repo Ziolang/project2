@@ -14,9 +14,7 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-1">
-			</div>
-			<div class="display2 col-sm-10">
+			<div class="display2 col-sm-9">
 				Grid Size: 
 				<select id="rows">
 					<option value="3">3</option>
@@ -44,13 +42,8 @@
 				</select> <button onclick="initGrid()">Apply</button> <br/>
 				<div class="grid">
 				</div>
-				<div class="col-sm-1">
-				</div>
 			</div>
-			<div class="row">
-				<div class="col-sm-1">
-				</div>
-				<div class="display col-sm-5">
+			<div class="display col-sm-3">
 					Brush: <span class="preview" style="color:black">{ }</span> <select id="brushes" onchange="searchById()">
 						<option value="0">Blank</option>
 					</select>
@@ -62,7 +55,10 @@
 					<div class="col-sm-1">
 					</div>
 				</div>
-				<div class="display col-sm-5">
+			<div class="row">
+				<div class="col-sm-2">
+				</div>
+				<div class="display col-sm-8">
 					<h2 class="centered">Create New Cell</h2>
 					Name: <input type="text" id="name"> (Whatever you want the cell to be called.)<br/>
 					Content: <input type="text" id="content" maxlength="1" size="2"> (A single character to represent the cell. A "." is a cell with no content. Example: A Bridge cell that a unit can enter AND interact with like damaging its durability.)<br/>
@@ -81,6 +77,8 @@
 					</select><br>
 					(Resistance is the cell's ability to resist those types of damage. Very low is 0% damage reduction and each step above that adds 20% damage reduction, with Very High being 80% damage reduction.)<br/>
 					Additional Details: <textarea rows="5" cols="100" placeholder="Here you can specify Flavor text, extra rules such as 'A unit takes 3 damage when they enter this cell\', and pretty much anything extra you can conceive of. Just keep in mind that good grammar/punctuation will help the database display it better."></textarea>
+				</div>
+				<div class="col-sm-2">
 				</div>
 			</div>
 		</div>
