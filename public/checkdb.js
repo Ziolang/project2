@@ -18,7 +18,7 @@ function searchById() {
 	  		color = "#" + cell["color"];
 		})
 	}
-
+	console.log("color: " + color + " content: " + content);
 	$(".preview").css("color", color);
 	$(".preview").html(content);
 }
