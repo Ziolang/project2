@@ -52,9 +52,10 @@ function initGrid() {
 			position = letter + (c + 1);
 			grid += '<span class="cell" id="' + position + '" onclick="applyBrush(this)">{ }</span> ';
 		}
-		grid += "<br/>";
+		grid += " " + letter + "<br/>";
 		letterx++;
 	}
+	grid += "-1---2---3---4---5---6---7---8---9---<br/>"
 
 	$('.grid').html(grid);
 }
