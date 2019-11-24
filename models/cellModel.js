@@ -9,7 +9,7 @@ function getCellById(id, callback) {
 		if (err) {console.log(err);}
 		else {
 			console.log(res);
-			var results = res.rows;
+			var results = res.rows[0];
 			console.log(results);
 			callback(null, results);
 		}
