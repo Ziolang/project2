@@ -11,7 +11,7 @@ function getCellById(id, callback) {
 			success:true,
 			list:result.rows
 		}
-
+		console.log(results);
 		callback(null, results);
 	});
 }
