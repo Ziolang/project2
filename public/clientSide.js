@@ -50,7 +50,7 @@ function initGrid() {
 		for (var c = 0; c < columns; c++) {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
-			grid += '<span class="cell" id="' + position + '">{ }</span>';
+			grid += '<span class="cell" id="' + position + '">{ }</span> ';
 		}
 		grid += "<br/>";
 		letterx++;
