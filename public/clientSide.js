@@ -22,7 +22,7 @@ function searchById() {
 			$(".preview").css("color", color);
 			$(".preview").html(content);
 
-			var details = "<h2>" + cell["name"] + "Cell</h2><p>";
+			var details = "<h2>" + cell["name"] + " Cell</h2><p>";
 			if (cell["durability"] > 0) {
 				details += "Durability: " + cell["durability"] + "%<br>" +
 				"Physical Resistance: " +  cell["pr"] + "<br>" +
