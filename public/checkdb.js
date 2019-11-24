@@ -24,9 +24,9 @@ function searchById() {
 
 			var details = "<h2>" + cell["name"] + "Cell</h2><p>";
 			if (cell["durability"] > 0) {
-				details += "Durability:" + cell["durability"] + "%<br>" +
-				"Physical Resistance:" +  cell["pr"] + "<br>" +
-				"Magical Resistance:" + cell["mr"] + "<br>";
+				details += "Durability: " + cell["durability"] + "%<br>" +
+				"Physical Resistance: " +  cell["pr"] + "<br>" +
+				"Magical Resistance: " + cell["mr"] + "<br>";
 			}
 			if (cell["blocks"]){
 				details += "Blocks Movement: Cannot enter or pass through this cell.<br>";
