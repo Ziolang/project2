@@ -16,6 +16,7 @@ function searchById() {
 			console.log("Got: " + cell["name"]);
 	  		content = "{" + cell["content"] + "}";
 	  		color = "#" + cell["color"];
+	  		console.
 		})
 	}
 
