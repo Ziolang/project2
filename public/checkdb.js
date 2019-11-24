@@ -16,12 +16,11 @@ function searchById() {
 			console.log("Got: " + cell["name"]);
 	  		content = "{" + cell["content"] + "}";
 	  		color = "#" + cell["color"];
-	  		console.
 		})
 	}
 
-	$("#preview").css("color", color);
-	$("#preview").html(content);
+	$(".preview").css("color", color);
+	$(".preview").html(content);
 }
 
 
