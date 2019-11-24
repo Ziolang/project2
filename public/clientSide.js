@@ -58,13 +58,3 @@ function initGrid() {
 
 	$('.grid').html(grid);
 }
-
-$(document).ready(function(){
-	$(".cell").click(function(){
-		var color = $(".preview").css("color");
-	  	var content = $(".preview").html();
-  		var that = $(this);
-  		$(that).css("color", color);
-  		$(that).html(content);
-  	});
-});
