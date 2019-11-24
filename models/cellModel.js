@@ -3,11 +3,12 @@ const connectionString = process.env.DATABASE_URL || "postgres://lsetltiaqifutt:
 const pool = new Pool({connectionString: connectionString });
 
 function getCellById(id, callback) {
+	console.log("Searching for id: " + id)
 	var sql = "SELECT * FROM Cells WHERE id = " + id;
 	pool.query(sql, function(err, result) {
 		if (err) console.log(err);
-		console.log(result.rows[0]);
-		callback(null, result.rows[0]);
+		console.log(result.rows);
+		callback(null, result.rows);
 	});
 }
 
