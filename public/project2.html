@@ -14,7 +14,7 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="display2 col-sm-9">
+			<div class="display2 col-sm-8">
 				Grid Size: 
 				<select id="rows">
 					<option value="3">3</option>
@@ -43,7 +43,7 @@
 				<div class="grid">
 				</div>
 			</div>
-			<div class="display col-sm-3">
+			<div class="display col-sm-4">
 					Brush: <span class="preview" style="color:black">{ }</span> <select id="brushes" onchange="searchById()">
 						<option value="0">Blank</option>
 					</select>
@@ -59,12 +59,12 @@
 				<div class="display col-sm-8">
 					<h2 class="centered">Create New Cell</h2>
 					Name: <input type="text" id="name"> (Whatever you want the cell to be called.)<br/>
-					Content: <input type="text" id="content" maxlength="1" size="2"> (A single character to represent the cell. A "." is a cell with no content. Example: A Bridge cell that a unit can enter AND interact with like damaging its durability.)<br/>
-					Color: <input type="color" id="color"> (Very Light colors are not recommended. Black with no content is a standard blank cell.)<br/>
+					Content: <input type="text" id="content" maxlength="1" size="2"><br/> (A single character to represent the cell. A "." is a cell with no content. Example: A Bridge cell that a unit can enter AND interact with like damaging its durability.)<br/><br/>
+					Color: <input type="color" id="color"><br/> (Very Light colors are not recommended. Black with no content is a standard blank cell.)<br/><br/>
 					Blocks Movement? <select id="blocks">
 						<option value="true">True</option><option value="false">False</option>
-					</select> (Whether or not a unit can occupy or pass through this cell.)<br/>
-					Durability: <input type="number" id="durability" value="0" min="0" max="100"> (The cell's durability in percentage. 100% is the default. If you want a pre-damaged or weakened cell, you can do a lower durability. If the cell cannot be damaged or harmed, set durability to 0.)<br/>
+					</select><br/> (Whether or not a unit can occupy or pass through this cell.)<br/><br/>
+					Durability: <input type="number" id="durability" value="0" min="0" max="100"><br/> (The cell's durability in percentage. 100% is the default. If you want a pre-damaged or weakened cell, you can do a lower durability. If the cell cannot be damaged or harmed, set durability to 0.)<br/><br/>
 					Physical Resistance: <select id="pr">
 						<option>Very Low</option><option>Low</option><option>Moderate</option>
 						<option>High</option><option>Very High</option>
@@ -73,8 +73,8 @@
 						<option>Very Low</option><option>Low</option><option>Moderate</option>
 						<option>High</option><option>Very High</option>
 					</select><br>
-					(Resistance is the cell's ability to resist those types of damage. Very low is 0% damage reduction and each step above that adds 20% damage reduction, with Very High being 80% damage reduction.)<br/>
-					Additional Details: <textarea rows="5" cols="100" placeholder="Here you can specify Flavor text, extra rules such as 'A unit takes 3 damage when they enter this cell\', and pretty much anything extra you can conceive of. Just keep in mind that good grammar/punctuation will help the database display it better."></textarea>
+					(Resistance is the cell's ability to resist those types of damage. Very low is 0% damage reduction and each step above that adds 20% damage reduction, with Very High being 80% damage reduction.)<br/><br/>
+					Additional Details: <textarea rows="5" cols="80" placeholder="Here you can specify Flavor text, extra rules such as 'A unit takes 3 damage when they enter this cell\', and pretty much anything extra you can conceive of. Just keep in mind that good grammar/punctuation will help the database display it better."></textarea>
 				</div>
 				<div class="col-sm-2">
 				</div>
