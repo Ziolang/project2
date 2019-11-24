@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+	<title>Grid Creator</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="clientSide.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="grid col-sm-8">
+				Grid Size: 
+				<select id="rows">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>	
+				</select> By 
+				<select id="columns">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>	
+				</select> <br/>
+				<div id="grid">
+				</div>
+			</div>
+			<div class="display col-sm-4">
+				Brush: <span class="preview" style="color:black">{ }</span> <select id="selector" onchange="searchById()">
+					<option value="0">Blank</option>
+					<option value="1">Tree</option>
+					<option value="2">Water</option>
+					<option value="3">Wall</option>
+					<option value="4">Door</option>
+				</select>
+				<button id="prevUpdate" onclick="setBrushOptions()">Reload Brushes</button>
+					<br/>
+				<div class="details"><h2>Blank Cell</h2>
+					<p>This cell is completely empty and has no properties.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
