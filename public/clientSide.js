@@ -76,7 +76,7 @@ function applyBrush(cell) {
 
 function loadBrushes() {
 	var html = '<option value="0">Blank</option>';
-	$.get("/getCell", {cellID:id}, function(cells) {
+	$.get("/getCells", function(cells) {
 		cells.forEach((cell) => {
 			html = '<option value="' + cell["id"] + '">' + cell["name"] + '</option>';
 			$('#brushes').html(html);
