@@ -16,6 +16,20 @@ function getCellById(id, callback) {
 	});
 }
 
+function getAllCells(callback) {
+	var sql = "SELECT * FROM Cells";
+	pool.query(sql, function(err, res) {
+		if (err) {console.log(err);}
+		else {
+			console.log(res);
+			var results = res.rows;
+			console.log(results);
+			callback(null, results);
+		}
+	});
+}
+
 module.exports = {
-	getCellById: getCellById
+	getCellById: getCellById,
+	getAllCells: getAllCells
 }

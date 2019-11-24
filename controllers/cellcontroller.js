@@ -7,6 +7,13 @@ function getCell(req, res) {
 	});
 }
 
+function getCells(req, res) {
+	cellModel.getAllCells(function(err, result) {
+		res.json(result);
+	});
+}
+
 module.exports = {
-	getCell :getCell
+	getCell :getCell,
+	getCells :getCells
 }

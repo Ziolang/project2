@@ -1,7 +1,7 @@
 function searchById() {
 	let content;
 	let color;
-	var id = Number($('#selector').val());
+	var id = Number($('#brushes').val());
 
 	if (id == 0) {
 		content = "{ }";
@@ -72,4 +72,14 @@ function applyBrush(cell) {
 	
 	$(cell).css("color", color);
 	$(cell).html(text);
+}
+
+function loadBrushes() {
+	var html = '<option value="0">Blank</option>';
+	$.get("/getCell", {cellID:id}, function(cells) {
+		cells.forEach((cell) => {
+			html = '<option value="' + cell["id"] + '">' + cell["name"] + '</option>';
+			$('#brushes').html(html);
+		});
+	});
 }
