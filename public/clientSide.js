@@ -78,7 +78,7 @@ function loadBrushes() {
 	var html = '<option value="0">Blank</option>';
 	$.get("/getCells", function(cells) {
 		cells.forEach((cell) => {
-			html = '<option value="' + cell["id"] + '">' + cell["name"] + '</option>';
+			html += '<option value="' + cell["id"] + '">' + cell["name"] + '</option>';
 			$('#brushes').html(html);
 		});
 	});
