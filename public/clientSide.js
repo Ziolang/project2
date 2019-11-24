@@ -81,7 +81,7 @@ function applyCell(cell) {
 	$(cell).css("color", color);
 	$(cell).html(text);
 	$(cell).removeClass();
-	$(cell).addClass(id);
+	$(cell).addClass(id, "cell");
 }
 
 function loadCells() {
