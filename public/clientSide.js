@@ -3,12 +3,19 @@ function searchById() {
 	let color;
 	var id = Number($('#brushes').val());
 
-	if (id == 0) {
+	if (id == -1) {
+		content = "   ";
+		color = "black";
+		$(".preview").css("color", color);
+		$(".preview").html(content);
+		$(".details").html("<h2>NULL Cell</h2><p>This cell does not exist. NULL cells are used to provide shape, boundaries and non-interactable areas.</p>");
+	}
+	else if (id == 0) {
 		content = "{ }";
 		color = "black";
 		$(".preview").css("color", color);
 		$(".preview").html(content);
-		$(".details").html("<h2>Blank Cell</h2><p>This cell is completely empty and has no properties.</p>");
+		$(".details").html("<h2>Blank Cell</h2><p>This cell is a generic, empty, occupiable cell with no properties.</p>");
 	}
 	else {
 		console.log("Searching by ID");
@@ -50,7 +57,7 @@ function initGrid() {
 		for (var c = 0; c < columns; c++) {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
-			grid += '<span class="cell" id="' + position + '" onclick="applyBrush(this)">{ }</span> ';
+			grid += '<span class="cell" id="' + position + '" onclick="applyCell(this)">{ }</span> ';
 		}
 		grid += " " + letter + "<br/>";
 		letterx++;
@@ -66,7 +73,7 @@ function initGrid() {
 	$('.grid').html(grid);
 }
 
-function applyBrush(cell) {
+function applyCell(cell) {
 	var color = $(".preview").css("color");
 	var text = $(".preview").html();
 	
@@ -74,8 +81,8 @@ function applyBrush(cell) {
 	$(cell).html(text);
 }
 
-function loadBrushes() {
-	var html = '<option value="0">Blank</option>';
+function loadCells() {
+	var html = '<option value="-1">NULL</option><option value="0">Blank</option>';
 	$.get("/getCells", function(cells) {
 		cells.forEach((cell) => {
 			html += '<option value="' + cell["id"] + '">' + cell["name"] + '</option>';
