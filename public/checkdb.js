@@ -5,7 +5,7 @@ function searchById() {
 	console.log("Cell:" + cell);
 
 	$.get("/getCell", {cellID:cell}, function(data) {
-		var item = data.name;
+		var item = data;
 		console.log("Got: " + item);
 		$("#result").html(item);
 	})
