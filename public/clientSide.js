@@ -34,8 +34,27 @@ function searchById() {
 			details += "Details: " + cell["detail"] + "</p>";
 			$(".details").html(details);
 		})
-	}
-	
+	}	
 }
 
+function initGrid() {
+	var rows = $("#rows").val();
+	var columns = $("#columns").val();
+	var letter = 'A';
+	var letterx = 65;
+	var position = '';
+	var grid = "";
+						
 
+	for (var r = 0; r < rows; r++) {
+		for (var c = 0; c < columns; c++) {
+			letter = String.fromCharCode(letterx);
+			position = letter + (c + 1);
+			grid += '<span class="cell" id="' + position + '">{ }</span>';
+		}
+		grid += "<br/>";
+		letterx++;
+	}
+
+	$('.grid').html(grid);
+}
