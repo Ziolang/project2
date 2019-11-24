@@ -8,8 +8,12 @@ function getCellById(id, callback) {
 	var params = [id];
 	pool.query(sql, params, function(err, result) {
 		if (err) console.log(err);
-		console.log(result.rows);
-		callback(null, result.rows);
+		var results = {
+			success:true,
+			list:result.rows
+		}
+
+		callback(null, results);
 	});
 }
 
