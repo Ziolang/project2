@@ -4,8 +4,9 @@ function searchById() {
 	var cell = $('#cell').val();
 	console.log("Cell:" + cell);
 
-	$.get("/getCell", function(data) {
+	$.get("/getCell", {cellID:cell}, function(data) {
 		console.log("Got: " + data);
+		$("#result").html(data);
 	})
 }
 
