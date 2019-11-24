@@ -1,13 +1,26 @@
 function searchById() {
-	console.log("Searching by ID");
+	var content;
+	var color;
+	var id = Number($('#selector').val());
 
-	var cell = Number($('#cell').val());
-	console.log("Cell:" + cell);
+	if (id == 0) {
+		content = "{ }";
+	  	color = "black";
+	}
+	else {
+		console.log("Searching by ID");
 
-	$.get("/getCell", {cellID:cell}, function(cell) {
-		console.log("Got: " + cell["name"]);
-		$("#result").html(cell["name"]);
-	})
+		console.log("Cell:" + id);
+
+		$.get("/getCell", {cellID:id}, function(cell) {
+			console.log("Got: " + cell["name"]);
+	  		content = "{" + cell["content"] + "}";
+	  		color = "#" + cell["color"];
+		})
+	}
+
+	$("#preview").css("color", color);
+	$("#preview").html(content);
 }
 
 
