@@ -76,9 +76,12 @@ function initGrid() {
 function applyCell(cell) {
 	var color = $(".preview").css("color");
 	var text = $(".preview").html();
+	var id = $('#brushes').val();
 	
 	$(cell).css("color", color);
 	$(cell).html(text);
+	$(cell).revomeClass();
+	$(cell).addClass(id);
 }
 
 function loadCells() {
