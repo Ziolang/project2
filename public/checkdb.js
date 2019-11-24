@@ -31,7 +31,7 @@ function searchById() {
 			if (cell["blocks"]){
 				details += "Blocks Movement: Cannot enter or pass through this cell.<br>";
 			}
-			details += "Details: " + row["detail"] + "</p>";
+			details += "Details: " + cell["detail"] + "</p>";
 			$(".details").html(details);
 		})
 	}
