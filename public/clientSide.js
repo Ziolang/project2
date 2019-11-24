@@ -55,8 +55,8 @@ function initGrid() {
 		grid += " " + letter + "<br/>";
 		letterx++;
 	}
-	for (var r = 1; r <= rows; r++)
-		grid += "-" + r + "--";
+	for (var c = 1; c <= columns; c++)
+		grid += "-" + c + "--";
 	grid += "-<br>";
 
 	$('.grid').html(grid);
