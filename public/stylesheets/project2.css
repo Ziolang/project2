@@ -60,6 +60,7 @@ body {
 .cell {
 	cursor: pointer;
 	background:white;
+	color:black;
 }
 
 .cell:hover {
