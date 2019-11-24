@@ -88,7 +88,7 @@ function loadCells() {
 			html += '<option value="' + cell["id"] + '">' + cell["name"] + '</option>';
 			$('#brushes').html(html);
 			$(".preview").css("color", "white");
-			$(".preview").html("   ");
+			$(".preview").html("&nbsp&nbsp&nbsp");
 			$(".details").html("<h2>NULL Cell</h2><p>This cell does not exist. NULL cells are used to provide shape, boundaries and non-interactable areas.</p>");
 		});
 	});
