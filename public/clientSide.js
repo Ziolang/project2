@@ -59,7 +59,7 @@ function initGrid() {
 		if (c < 10)
 			grid += "-" + c + "--";
 		else
-			grid += "-" + c + "-";
+			grid += c + "--";
 	}
 	grid += "-<br>";
 
