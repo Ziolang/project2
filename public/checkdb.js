@@ -1,7 +1,7 @@
 function searchById() {
 	console.log("Searching by ID");
 
-	var cell = $('#cell').val();
+	var cell = Number($('#cell').val());
 	console.log("Cell:" + cell);
 
 	$.get("/getCell", {cellID:cell}, function(data) {

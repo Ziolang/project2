@@ -6,8 +6,8 @@ function getCellById(id, callback) {
 	var sql = "SELECT * FROM Cells WHERE id = " + id;
 	pool.query(sql, function(err, result) {
 		if (err) console.log(err);
-		console.log(result.row[0]);
-		callback(null, result.row[0]);
+		console.log(result.rows[0]);
+		callback(null, result.rows[0]);
 	});
 }
 
