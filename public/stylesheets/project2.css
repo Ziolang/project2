@@ -34,14 +34,21 @@ li a:hover {
 	color:white;
 }
 
+.display2 {
+	background-color: #d10000;
+	border: 3px solid #b00000;
+	padding:15px;
+	display:block;
+	overflow:auto;
+	text-align:center;
+}
+
 .grid {
 	
 	font-family: 'Inconsolata', monospace;
-	text-align:center;
 	font-size: 16px;
 	font-size: 2vw;
 	cursor:default;
-	color:black;
 }
 
 body {
