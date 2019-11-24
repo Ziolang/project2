@@ -28,7 +28,7 @@ function searchById() {
 				"Physical Resistance:" +  cell["pr"] + "<br>" +
 				"Magical Resistance:" + cell["mr"] + "<br>";
 			}
-			if (row.blocks){
+			if (cell["blocks"]){
 				details += "Blocks Movement: Cannot enter or pass through this cell.<br>";
 			}
 			details += "Details: " + row["detail"] + "</p>";
