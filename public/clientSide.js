@@ -5,8 +5,8 @@ function searchById() {
 
 	if (id == 0) {
 		content = "{ }";
-	  	color = "black";
-	  	$(".preview").css("color", color);
+		color = "black";
+		$(".preview").css("color", color);
 		$(".preview").html(content);
 		$(".details").html("<h2>Blank Cell</h2><p>This cell is completely empty and has no properties.</p>");
 	}
@@ -17,9 +17,9 @@ function searchById() {
 
 		$.get("/getCell", {cellID:id}, function(cell) {
 			console.log("Got: " + cell["name"]);
-	  		content = "{" + cell["content"] + "}";
-	  		color = "#" + cell["color"];
-	  		$(".preview").css("color", color);
+			content = "{" + cell["content"] + "}";
+			color = "#" + cell["color"];
+			$(".preview").css("color", color);
 			$(".preview").html(content);
 
 			var details = "<h2>" + cell["name"] + "Cell</h2><p>";
@@ -50,11 +50,19 @@ function initGrid() {
 		for (var c = 0; c < columns; c++) {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
-			grid += '<span class="cell" id="' + position + '">{ }</span> ';
+			grid += '<span class="cell" id="' + position + '" onclick="applyBrush(this)">{ }</span> ';
 		}
 		grid += "<br/>";
 		letterx++;
 	}
 
 	$('.grid').html(grid);
+}
+
+function applyBrush(cell) {
+	var color = $(".preview").css("color");
+	var text = $(".preview").html();
+	
+	cell.css("color", color);
+	cell.html(text);
 }

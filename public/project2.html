@@ -59,18 +59,4 @@
 			</div>
 		</div>
 	</div>
-
-	<script>
-	$(document).ready(function(){
-		$(".cell").click(function(){
-			var color = $(".preview").css("color");
-		  	var content = $(".preview").html();
-  			var that = $(this);
-
-  			alert(color + " " + content);
-	  		$(that).css("color", color);
-  			$(that).html(content);
-  		});
-	});
-	</script>
 </body>
