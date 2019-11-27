@@ -41,6 +41,7 @@ li a:hover {
 	display:block;
 	overflow:auto;
 	text-align:center;
+	color:white;
 }
 
 .grid {
@@ -49,7 +50,6 @@ li a:hover {
 	font-size: 16px;
 	font-size: 2vw;
 	cursor:default;
-	color:white;
 }
 
 body {
