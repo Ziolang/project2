@@ -98,8 +98,9 @@ function loadCells() {
 	});
 }
 
-function checkForm() {
+function validate() {
 	var val = $("#durability").val();
+	alert(val);
 	if (val > 100) {
 		$("#durability").val(100);
 	}

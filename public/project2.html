@@ -65,7 +65,7 @@
 					Blocks Movement? <select id="blocks">
 						<option value="true">True</option><option value="false">False</option>
 					</select><br/> (Whether or not a unit can occupy or pass through this cell.)<br/><br/>
-					Durability: <input type="number" id="durability" value="0" min="0" max="100" required onchange="checkForm()"><br/> (The cell's durability in percentage. 100% is the default. If you want a pre-damaged or weakened cell, you can do a lower durability. If the cell cannot be damaged or harmed, set durability to 0.)<br/><br/>
+					Durability: <input type="number" id="durability" value="0" min="0" max="100" required onchange="validate()"><br/> (The cell's durability in percentage. 100% is the default. If you want a pre-damaged or weakened cell, you can do a lower durability. If the cell cannot be damaged or harmed, set durability to 0.)<br/><br/>
 					Physical Resistance: <select id="pr">
 						<option>Very Low</option><option>Low</option><option>Moderate</option>
 						<option>High</option><option>Very High</option>
