@@ -97,3 +97,13 @@ function loadCells() {
 		});
 	});
 }
+
+function checkForm() {
+	var val = $("#durability").val();
+	if (val > 100) {
+		$("#durability").val(100);
+	}
+	if (val < 0 || isNaN(val)) {
+		$("#durability").val(0);
+	}
+}
