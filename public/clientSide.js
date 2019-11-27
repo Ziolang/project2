@@ -102,9 +102,9 @@ function validate() {
 	var val = $("#durability").val();
 	alert(val);
 	if (val > 100) {
-		$("#durability").val(100);
+		$("#durability").val("100");
 	}
 	if (val < 0 || isNaN(val)) {
-		$("#durability").val(0);
+		$("#durability").val("0");
 	}
 }
