@@ -8,8 +8,8 @@ const cellController = require('./controllers/cellcontroller.js')
 express()
 	.use(express.static(path.join(__dirname, 'public')))
 	.use(express.json())
-	.use(bodyParser.urlencoded({ extended: false }));
-	.use(bodyParser.json());
+	.use(bodyParser.urlencoded({ extended: false }))
+	.use(bodyParser.json())
 	.use(express.urlencoded({extended: true}))
 	.set('views', path.join(__dirname, 'views'))
 	.set('view engine', 'ejs')
