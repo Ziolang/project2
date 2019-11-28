@@ -14,7 +14,7 @@ function getCells(req, res) {
 }
 
 function postCell(req, res) {
-	var values = req.query.values;
+	var values = req.body.values;
 	cellModel.postCellToDB(values, function(err, result) {
 		res.json(result);
 	})
