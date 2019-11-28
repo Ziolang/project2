@@ -32,7 +32,7 @@ function getAllCells(callback) {
 function postCellToDB(values, callback) {
 	var sql = "";
 
-	console.log("Made it with values named: " + values["name"]);
+	console.log("Made it with values named: " + values);
 
 	/*pool.query(sql, function (err, result) {
     if (err) throw err;
