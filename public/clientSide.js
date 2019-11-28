@@ -99,18 +99,40 @@ function loadCells() {
 }
 
 function addCell() {
-	var values = {
-		name: $('#name').val(),
-		content: $('#content').val(),
-		color: $('#color').val(),
-		blocks: $('#blocks').val(),
-		durability: $('#durability').val(),
-		pr: $('#pr').val(),
-		mr: $('#mr').val(),
-		detail: $('#detail').val()
+	var verify = false;
+	var name = $('#name').val();
+	var content = $('#content').val();
+	var color = $('#color').val();
+	var blocks = $('#blocks').val();
+	var durability = $('#durability').val();
+	var pr = $('#pr').val();
+	var mr = $('#mr').val();
+	var detail = $('#detail').val();
+
+	if (name = "") {
+		alert("Name must be filled in.");
+		return;
 	}
 
-	alert(values["name"]);
+	if (content = "") {
+		alert("Content must be filled in.");
+		return;
+	}
+
+	var values = {
+		name: name,
+		content: content,
+		color: color,
+		blocks: blocks,
+		durability: durability,
+		pr: pr,
+		mr: mr,
+		detail: detail
+	}
+
+	$.post("/postCell", values, function(result) {
+
+	})
 }
 
 function validate() {

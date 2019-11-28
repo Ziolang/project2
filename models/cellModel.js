@@ -29,13 +29,15 @@ function getAllCells(callback) {
 	});
 }
 
-function postCellToDB(callback) {
-	sql = "";
+function postCellToDB(values, callback) {
+	var sql = "";
 
-	pool.query(sql, function (err, result) {
+	console.log("Made it with values named: " + values["name"]);
+
+	/*pool.query(sql, function (err, result) {
     if (err) throw err;
     console.log("1 record inserted");
-  });
+  });*/
 }
 
 module.exports = {
