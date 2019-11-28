@@ -19,7 +19,7 @@ function postCell(req, res) {
 		res.json(result);
 	})
 }
-
+ 
 module.exports = {
 	getCell: getCell,
 	getCells: getCells,
