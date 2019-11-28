@@ -110,7 +110,7 @@ function addCell() {
 		detail: $('#detail').val()
 	}
 
-	alert(values);
+	alert(values["name"]);
 }
 
 function validate() {
