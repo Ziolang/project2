@@ -29,7 +29,17 @@ function getAllCells(callback) {
 	});
 }
 
+function postCellToDB(callback) {
+	sql = "";
+
+	pool.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+  });
+}
+
 module.exports = {
 	getCellById: getCellById,
-	getAllCells: getAllCells
+	getAllCells: getAllCells,
+	postCellToDB: postCellToDB
 }

@@ -98,9 +98,23 @@ function loadCells() {
 	});
 }
 
+function addCell() {
+	var values = {
+		name: $('#name').val(),
+		content: $('#content').val(),
+		color: $('#color').val(),
+		blocks: $('#blocks').val(),
+		durability: $('#durability').val(),
+		pr: $('#pr').val(),
+		mr: $('#mr').val(),
+		detail: $('#detail').val()
+	}
+
+	alert(values);
+}
+
 function validate() {
 	var val = $("#durability").val();
-	alert(val);
 	if (val > 100) {
 		$("#durability").val("100");
 	}

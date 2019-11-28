@@ -13,7 +13,14 @@ function getCells(req, res) {
 	});
 }
 
+function postCell(req, res) {
+	cellModel.postCellToDB(name, content, color, blocks, durability, pr, mr, detail, function(err, result) {
+		res.json(result);
+	})
+}
+
 module.exports = {
-	getCell :getCell,
-	getCells :getCells
+	getCell: getCell,
+	getCells: getCells,
+	postCell: postCell
 }
