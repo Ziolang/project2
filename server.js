@@ -14,7 +14,7 @@ express()
 	.get('/getCell', cellController.getCell)
 	.get('/getCells', cellController.getCells)
 	//.post('/postCell', cellController.postCell)
-	.post('/PostCell', values, function(req, res) {
+	.post('/PostCell', function(req, res) {
 		console.log("made it!");
 	})
   	.listen(PORT, () => console.log(`Listening on ${ PORT }`))
