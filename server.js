@@ -1,16 +1,14 @@
-const express = require('express')
-const bp = require('body-parser')
-const path = require('path')
-const PORT = process.env.PORT || 5000
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
+const PORT = process.env.PORT || 5000;
 const { Pool } = require('pg');
-const cellController = require('./controllers/cellcontroller.js')
+const cellController = require('./controllers/cellcontroller.js');
 
 express()
 	.use(express.static(path.join(__dirname, 'public')))
-	.use(express.json())
-	.use(bp.urlencoded({ extended: false }))
-	.use(bp.json())
-	.use(express.urlencoded({extended: true}))
+	.use( bodyParser.json()
+	.use(bodyParser.urlencoded({extended: true}))
 	.set('views', path.join(__dirname, 'views'))
 	.set('view engine', 'ejs')
 	.get('/getCell', cellController.getCell)
