@@ -67,12 +67,12 @@
 					</select><br/> (Whether or not a unit can occupy or pass through this cell.)<br/><br/>
 					Durability: <input type="number" id="durability" value="0" min="0" max="100" required onchange="validate()"><br/> (The cell's durability in percentage. 100% is the default. If you want a pre-damaged or weakened cell, you can do a lower durability. If the cell cannot be damaged or harmed, set durability to 0.)<br/><br/>
 					Physical Resistance: <select id="pr">
-						<option>Very Low</option><option>Low</option><option>Moderate</option>
-						<option>High</option><option>Very High</option>
+						<option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Moderate">Moderate</option>
+						<option value="High">High</option><option value="Very High">Very High</option>
 					</select>&nbsp&nbsp&nbsp&nbsp
 					Magical Resistance: <select id="mr">
-						<option>Very Low</option><option>Low</option><option>Moderate</option>
-						<option>High</option><option>Very High</option>
+						<option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Moderate">Moderate</option>
+						<option value="High">High</option><option value="Very High">Very High</option>
 					</select><br>
 					(Resistance is the cell's ability to resist those types of damage. Very low is 0% damage reduction and each step above that adds 20% damage reduction, with Very High being 80% damage reduction.)<br/><br/>
 					Additional Details:<br/>
