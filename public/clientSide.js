@@ -132,7 +132,8 @@ function addCell() {
 	console.log(values["name"]);
 
 	$.post("/postCell", {cell: values}, function(result) {
-		console.log("made it! With: " + result["name"]);
+		console.log("made it! With: " + result["succeeds"]);
+		alert("Added cell: " + result["name"]);
 	})
 }
 

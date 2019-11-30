@@ -30,13 +30,22 @@ function getAllCells(callback) {
 }
 
 function postCellToDB(cell, callback) {
-	console.log("Inputting new data for JSON cell: " + cell["name"])
-	var sql = "SELECT * FROM Cells WHERE id = " + cell["name"];
+	var sql = "INSERT INTO Cells VALUES (DEFAULT, " + 
+	cell["name"] + ", " +
+	cell["content"] + ", " +
+	cell["color"] + ", " +
+	cell["blocks"] + ", " +
+	cell["durability"] + ", " +
+	cell["pr"] + ", " +
+	cell["mr"] + ", " +
+	cell["detail"] + ")";
 	pool.query(sql, function(err, res) {
 		if (err) {console.log(err);}
 		else {
-			var results = res.rows[0];
-			callback(null, results);
+			var result = {
+				succeeds: "true",
+				name: cell["name"]
+			}
 		}
 	});
 }
