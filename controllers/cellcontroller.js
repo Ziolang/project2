@@ -15,7 +15,7 @@ function getCells(req, res) {
 
 function postCell(req, res) {
 	console.log("MAde it to postCell()")
-	var values = req.query.values;
+	var values = req.query.name;
 /*
 	console.log("Made it to Post with: " + values["name"]);
 	cellModel.postCellToDB(values, function(err, result) {

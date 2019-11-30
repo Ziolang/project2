@@ -99,7 +99,6 @@ function loadCells() {
 }
 
 function addCell() {
-	var verify = false;
 	var name = $('#name').val();
 	var content = $('#content').val();
 	var color = $('#color').val();
@@ -130,7 +129,7 @@ function addCell() {
 		detail: detail
 	}
 
-	$.get("/postCell", {values: values}, function(result) {
+	$.get("/postCell", {name: name}, function(result) {
 		console.log("made it!");
 	})
 }
