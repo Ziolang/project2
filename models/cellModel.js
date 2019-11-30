@@ -30,14 +30,17 @@ function getAllCells(callback) {
 }
 
 function postCellToDB(values, callback) {
-	var sql = "";
-
-	console.log("Made it with values named: " + values);
-
-	/*pool.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log("1 record inserted");
-  });*/
+	console.log("Searching for id: " + values)
+	var sql = "SELECT * FROM Cells WHERE id = " + values;
+	pool.query(sql, function(err, res) {
+		if (err) {console.log(err);}
+		else {
+			console.log(res);
+			var results = res.rows[0];
+			console.log(results);
+			callback(null, results);
+		}
+	});
 }
 
 module.exports = {

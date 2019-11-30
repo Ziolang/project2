@@ -99,14 +99,14 @@ function loadCells() {
 }
 
 function addCell() {
-	let name = $('#name').val();
-	let content = $('#content').val();
-	let color = $('#color').val();
-	let blocks = $('#blocks').val();
-	let durability = $('#durability').val();
-	let pr = $('#pr').val();
-	let mr = $('#mr').val();
-	let detail = $('#detail').val();
+	var name = $('#name').val();
+	var content = $('#content').val();
+	var color = $('#color').val();
+	var blocks = $('#blocks').val();
+	var durability = $('#durability').val();
+	var pr = $('#pr').val();
+	var mr = $('#mr').val();
+	var detail = $('#detail').val();
 
 	if (name == "") {
 		alert("Name must be filled in.");
