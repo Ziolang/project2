@@ -129,10 +129,8 @@ function addCell() {
 		detail: detail
 	}
 
-	$.post("/postCell", {nameid: name}, function(result) {
+	$.post("/postCell", {cell: values}, function(result) {
 		console.log("made it! With: " + result["name"]);
-
-
 	})
 }
 
