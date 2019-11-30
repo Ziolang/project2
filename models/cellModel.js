@@ -30,7 +30,7 @@ function getAllCells(callback) {
 }
 
 function postCellToDB(cell, callback) {
-	var sql = 'INSERT INTO Cells VALUES (DEFAULT, "';
+	var sql = 'INSERT INTO Cells (name, content, color, blocks, durability, pr, mr, detail) VALUES ("';
 	sql += cell["name"] + '", "';
 	sql += cell["content"] + '", "';
 	sql += cell["color"] + '", "';
@@ -44,8 +44,8 @@ function postCellToDB(cell, callback) {
 		else {
 			var result = {
 				succeeds: "true",
-				name: cell["name"]
 			}
+			callback(null, result);
 		}
 	});
 }
