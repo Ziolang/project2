@@ -34,9 +34,9 @@ function postCellToDB(cell, callback) {
 	sql += cell["name"] + '", "' +
 	sql += cell["content"] + '", "' +
 	sql += cell["color"] + '", "' +
-	sql += sql += cell["blocks"] + '", "' +
+	sql += cell["blocks"] + '", "' +
 	sql += cell["durability"] + '", "' +
-	sql += sql += cell["pr"] + '", "' +
+	sql += cell["pr"] + '", "' +
 	sql += cell["mr"] + '", "' +
 	sql += cell["detail"] + '")';
 	pool.query(sql, function(err, res) {
