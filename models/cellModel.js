@@ -30,15 +30,15 @@ function getAllCells(callback) {
 }
 
 function postCellToDB(cell, callback) {
-	var sql = "INSERT INTO Cells VALUES (DEFAULT, " + 
-	cell["name"] + ", " +
-	cell["content"] + ", " +
-	cell["color"] + ", " +
-	cell["blocks"] + ", " +
-	cell["durability"] + ", " +
-	cell["pr"] + ", " +
-	cell["mr"] + ", " +
-	cell["detail"] + ")";
+	var sql = 'INSERT INTO Cells VALUES (DEFAULT, ' + 
+	cell["name"] + '", "' +
+	cell["content"] + '", "' +
+	cell["color"] + '", "' +
+	cell["blocks"] + '", "' +
+	cell["durability"] + '", "' +
+	cell["pr"] + '", "' +
+	cell["mr"] + '", "' +
+	cell["detail"] + '")';
 	pool.query(sql, function(err, res) {
 		if (err) {console.log(err);}
 		else {
