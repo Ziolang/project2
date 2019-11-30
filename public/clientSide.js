@@ -25,7 +25,7 @@ function searchById() {
 		$.get("/getCell", {cellID:id}, function(cell) {
 			console.log("Got: " + cell["name"]);
 			content = "{" + cell["content"] + "}";
-			color = "#" + cell["color"];
+			color = cell["color"];
 			$(".preview").css("color", color);
 			$(".preview").html(content);
 
