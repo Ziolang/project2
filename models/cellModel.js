@@ -30,8 +30,8 @@ function getAllCells(callback) {
 }
 
 function postCellToDB(values, callback) {
-	console.log("Searching for id: " + values)
-	var sql = "SELECT * FROM Cells WHERE id = " + values;
+	console.log("Searching for id: 2")
+	var sql = "SELECT * FROM Cells WHERE id = 2";
 	pool.query(sql, function(err, res) {
 		if (err) {console.log(err);}
 		else {
