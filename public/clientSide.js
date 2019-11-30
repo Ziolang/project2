@@ -108,12 +108,12 @@ function addCell() {
 	var mr = $('#mr').val();
 	var detail = $('#detail').val();
 
-	if (name = "") {
+	if (name == "") {
 		alert("Name must be filled in.");
 		return;
 	}
 
-	if (content = "") {
+	if (content == "") {
 		alert("Content must be filled in.");
 		return;
 	}
