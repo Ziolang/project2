@@ -31,13 +31,13 @@ function getAllCells(callback) {
 
 function postCellToDB(cell, callback) {
 	var sql = 'INSERT INTO Cells VALUES (DEFAULT, "';
-	sql += cell["name"] + '", "' +
-	sql += cell["content"] + '", "' +
-	sql += cell["color"] + '", "' +
-	sql += cell["blocks"] + '", "' +
-	sql += cell["durability"] + '", "' +
-	sql += cell["pr"] + '", "' +
-	sql += cell["mr"] + '", "' +
+	sql += cell["name"] + '", "';
+	sql += cell["content"] + '", "';
+	sql += cell["color"] + '", "';
+	sql += cell["blocks"] + '", "';
+	sql += cell["durability"] + '", "';
+	sql += cell["pr"] + '", "';
+	sql += cell["mr"] + '", "';
 	sql += cell["detail"] + '")';
 	pool.query(sql, function(err, res) {
 		if (err) {console.log(err);}
