@@ -129,6 +129,8 @@ function addCell() {
 		detail: detail
 	}
 
+	console.log(values["name"]);
+
 	$.post("/postCell", {cell: values}, function(result) {
 		console.log("made it! With: " + result["name"]);
 	})

@@ -29,8 +29,8 @@ function getAllCells(callback) {
 	});
 }
 
-function postCellToDB(values, callback) {
-	console.log("Inputting new data for JSON cell: " + values["name"])
+function postCellToDB(cell, callback) {
+	console.log("Inputting new data for JSON cell: " + cell["name"])
 	var sql = "SELECT * FROM Cells WHERE id = 2";
 	pool.query(sql, function(err, res) {
 		if (err) {console.log(err);}
