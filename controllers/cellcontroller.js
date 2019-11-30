@@ -14,14 +14,17 @@ function getCells(req, res) {
 }
 
 function postCell(req, res) {
-	console.log("MAde it to postCell()")
-	var values = req.query.name;
+	var cellID = 2;
+	cellModel.getCellById(cellID, function(err, result) {
+		res.json(result);
+	});
+}
 /*
 	console.log("Made it to Post with: " + values["name"]);
 	cellModel.postCellToDB(values, function(err, result) {
 		res.json(result);
 	})*/
-}
+//}
  
 module.exports = {
 	getCell: getCell,

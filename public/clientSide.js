@@ -130,7 +130,9 @@ function addCell() {
 	}
 
 	$.get("/postCell", {name: name}, function(result) {
-		console.log("made it!");
+		console.log("made it! With: " + result["name"]);
+
+
 	})
 }
 
