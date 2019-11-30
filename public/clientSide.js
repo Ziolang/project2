@@ -86,14 +86,12 @@ function applyCell(cell) {
 }
 
 function loadCells() {
-	var html = '<option value="-1">NULL</option><option value="0">Blank</option>';
+	var html = '<option value="-1">NULL</option><option value="0" selected>Blank</option>';
 	$.get("/getCells", function(cells) {
 		cells.forEach((cell) => {
 			html += '<option value="' + cell["id"] + '">' + cell["name"] + '</option>';
 			$('#brushes').html(html);
-			$(".preview").css("color", "white");
-			$(".preview").html("&nbsp&nbsp&nbsp");
-			$(".details").html("<h2>NULL Cell</h2><p>This cell does not exist. NULL cells are used to provide shape, boundaries and non-interactable areas.</p>");
+			$(".details").html("<h2>Blank Cell</h2><p>This cell is a generic, empty, occupiable cell with no properties.</p>");
 		});
 	});
 }
