@@ -14,12 +14,13 @@ function getCells(req, res) {
 }
 
 function postCell(req, res) {
+	console.log("MAde it to postCell()")
 	var values = req.query.values;
-
+/*
 	console.log("Made it to Post with: " + values["name"]);
 	cellModel.postCellToDB(values, function(err, result) {
 		res.json(result);
-	})
+	})*/
 }
  
 module.exports = {
