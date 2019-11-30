@@ -4,7 +4,7 @@ function searchById() {
 	var id = Number($('#brushes').val());
 
 	if (id == -1) {
-		content = "   ";
+		content = "&nbsp&nbsp&nbsp";
 		color = "black";
 		$(".preview").css("color", color);
 		$(".preview").html(content);
@@ -24,7 +24,11 @@ function searchById() {
 
 		$.get("/getCell", {cellID:id}, function(cell) {
 			console.log("Got: " + cell["name"]);
-			content = "{" + cell["content"] + "}";
+			if (cell["content"] == '.') {
+				content = "{ }";
+			}
+			else
+				content = "{" + cell["content"] + "}";
 			color = cell["color"];
 			$(".preview").css("color", color);
 			$(".preview").html(content);
