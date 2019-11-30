@@ -12,7 +12,7 @@ express()
 	.set('view engine', 'ejs')
 	.get('/getCell', cellController.getCell)
 	.get('/getCells', cellController.getCells)
-	.get('/postCell', cellController.postCell)
+	.post('/postCell', cellController.postCell)
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
