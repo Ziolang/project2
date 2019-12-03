@@ -78,8 +78,7 @@ body {
 }
 
 .imgCell:hover {
-	opacity:.7;
-	background:black;
+	background:grey;
 	color:white;
 }
 
