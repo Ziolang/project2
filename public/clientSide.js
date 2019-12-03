@@ -48,6 +48,35 @@ function searchById() {
 	}	
 }
 
+function initImgGrid() {
+	var rows = $("#rows").val();
+	var columns = $("#columns").val();
+	var letter = 'A';
+	var letterx = 65;
+	var position = '';
+	var grid = "";
+						
+
+	for (var r = 0; r < rows; r++) {
+		for (var c = 0; c < columns; c++) {
+			letter = String.fromCharCode(letterx);
+			position = letter + (c + 1);
+			grid += '<img src="fourway.png" class="cell" id="' + position + '" onclick="applyImgCell(this)"> ';
+		}
+		grid += " " + letter + "<br/>";
+		letterx++;
+	}
+	for (var c = 1; c <= columns; c++) {
+		if (c < 10)
+			grid += "-" + c + "--";
+		else
+			grid += c + "--";
+	}
+	grid += "-<br>";
+
+	$('.grid').html(grid);
+}
+
 function initGrid() {
 	var rows = $("#rows").val();
 	var columns = $("#columns").val();
