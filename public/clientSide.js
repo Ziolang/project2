@@ -42,8 +42,7 @@ function reload() {
 				$(".preview").css("color", color);
 				$(".preview").html(content);
 			}
-
-			if (gridType == "txt") {
+			else {
 				if (cell["content"] == '.')
 					content = "&nbsp";
 				else
