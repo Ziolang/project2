@@ -11,7 +11,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="clientSide.js"></script>
 </head>
-<body onload="reload()">
+<body>
 	<div class="container">
 		<div class="row">
 			<div class="display2 col-sm-8">
@@ -27,7 +27,7 @@
 					<option value="10">10</option>
 					<option value="11">11</option>
 					<option value="12">12</option>	
-				</select> By 
+				</select> Rows By 
 				<select id="columns">
 					<option value="3">3</option>
 					<option value="4">4</option>
@@ -39,14 +39,14 @@
 					<option value="10">10</option>
 					<option value="11">11</option>
 					<option value="12">12</option>	
-				</select> <button onclick="initGrid()">Generate Text Grid</button> <button onclick="initImgGrid()">Generate Image Grid</button><br/>
+				</select> Columns <br/> <button onclick="initGrid()">Generate Text Grid</button> <button onclick="initImgGrid()">Generate Image Grid</button><br/>
 				<div class="grid">
 					Grid Not Initialized. Select a size and click Apply.
 					<br><br>
 				</div>
 			</div>
 			<div class="display col-sm-4">
-					Preview: <span class="preview" style="color:black">ERR</span> <select id="brushes" onchange="reload()">
+					Preview: <span class="preview" style="color:black">ERR</span> <select id="brushes" onload="reload()" onchange="reload()">
 						<option value="0">Load Me!</option>
 					</select><br/>
 					<button id="prevUpdate" onclick="loadCells()">Reload</button>
