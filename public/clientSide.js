@@ -209,6 +209,9 @@ function validate() {
 function imgPreview() {
 	let val = $("#img").val();
 	let color = $("#color").val();
+	let content = $("#content").val();
 
 	$("#showimg").html('<img src="' + val + '" style="background-color:' + color + '">');
+	$("#showtxt").css("color", color);
+	$("#showtxt").html("{" + content + "}");
 }

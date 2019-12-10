@@ -62,10 +62,11 @@
 				<div class="display col-sm-8">
 					<h2 class="centered">Create New Cell</h2>
 					Name: <input type="text" id="name" required> (Whatever you want the cell to be called.)<br/><br/>
-					Content: <input type="text" id="content" maxlength="1" size="2" required> 
+					Text Content: <input type="text" id="content" maxlength="1" size="2" onchange="preview()" required> 
 					<br/> (A single character to represent the cell. A "." is a cell with no content. Example: A Bridge cell that a unit can enter AND interact with like damaging its durability.)<br/><br/>
-					Color: <input type="color" id="color"><br/> (Very Light colors and very dark colors are not recommended.)<br/><br/>
-					Image: <span id="showimg"><img src="fourway.png" style="background-color:white"></span> <select id="img" onchange="imgPreview()">
+					Text Preview:<span id="showtxt" class="preview2">{ }</span> Image Preview: <span id="showimg"><img src="fourway.png" style="background-color:white"></span>
+					Color: <input type="color" id="color" onchange="preview()"><br/> (Very Light colors and very dark colors are not recommended.)<br/>
+					Cell Image: <select id="img" onchange="preview()">
 						<option value="fourway.png">Standard</option>
 						<option value="base.png">Block</option>
 						<option value="pathH.png">Horizontal Path</option>
@@ -76,7 +77,7 @@
 						<option value="damaged.png">Damaged Wall</option>
 						<option value="door.png">Door</option>
 						<option value="prism.png">Prism</option>
-					</select>
+					</select><br/><br/>
 					Blocks Movement? <select id="blocks">
 						<option value="true">True</option><option value="false">False</option>
 					</select><br/> (Whether or not a unit can occupy or pass through this cell.)<br/><br/>

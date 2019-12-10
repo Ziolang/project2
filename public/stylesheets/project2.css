@@ -99,6 +99,14 @@ body {
 	font-size: 2vw;
 }
 
+.preview2 {
+	cursor: pointer;
+	background:white;
+	font-family: 'Inconsolata', monospace;
+	font-size: 16px;
+	font-size: 2vw;
+}
+
 .border {
 	font-family: 'Inconsolata', monospace;
 }
