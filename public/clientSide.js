@@ -204,6 +204,8 @@ function addCell() {
 	$.post("/postCell", {cell: values}, function(result) {
 		console.log("made it! With: " + result["succeeds"]);
 	})
+
+	reload();
 }
 
 function validate() {
