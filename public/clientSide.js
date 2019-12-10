@@ -205,3 +205,9 @@ function validate() {
 		$("#durability").val("0");
 	}
 }
+
+function imgPreview() {
+	let val = $("#img").val();
+
+	$("#showimg").html('<img src="' + val + '" style="background-color:white">');
+}

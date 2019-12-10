@@ -65,7 +65,7 @@
 					Content: <input type="text" id="content" maxlength="1" size="2" required> 
 					<br/> (A single character to represent the cell. A "." is a cell with no content. Example: A Bridge cell that a unit can enter AND interact with like damaging its durability.)<br/><br/>
 					Color: <input type="color" id="color"><br/> (Very Light colors and very dark colors are not recommended.)<br/><br/>
-					Image: <span id="showimg"><img src="fourway.png"></span> <select id="img">
+					Image: <span id="showimg"><img src="fourway.png" style="background-color:white"></span> <select id="img" onchange="imgPreview()">
 						<option value="fourway.png">Standard</option>
 						<option value="base.png">Block</option>
 						<option value="pathH.png">Horizontal Path</option>
