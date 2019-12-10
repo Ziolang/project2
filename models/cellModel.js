@@ -40,6 +40,7 @@ function postCellToDB(cell, callback) {
 	sql += cell["mr"] + "', '";
 	sql += cell["img"] + "', '";
 	sql += cell["detail"] + "')";
+	console.log(cell["detail"]);
 	pool.query(sql, function(err, res) {
 		if (err) {console.log(err);}
 		else {
