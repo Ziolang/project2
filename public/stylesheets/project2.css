@@ -79,6 +79,7 @@ body {
 }
 
 .imgCell {
+	background-color:white;
 	cursor: pointer;
 	width:7%;
 	height:auto;
