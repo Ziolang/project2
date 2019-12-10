@@ -1,6 +1,5 @@
-var gridType = "txt";
-
 function reload() {
+	let gridType = $('#gridType').val();
 	let content;
 	let color;
 	let img;
@@ -70,7 +69,7 @@ function reload() {
 }
 
 function initImgGrid() {
-	gridType = "img";
+	$('#gridType').val("img");
 	var rows = $("#rows").val();
 	var columns = $("#columns").val();
 	var letter = 'A';
@@ -100,7 +99,7 @@ function initImgGrid() {
 }
 
 function initGrid() {
-	gridType = "txt";
+	$('#gridType').val("txt");
 	var rows = $("#rows").val();
 	var columns = $("#columns").val();
 	var letter = 'A';
