@@ -46,7 +46,7 @@
 				</div>
 			</div>
 			<div class="display col-sm-4">
-					Preview: <span class="preview" style="color:black">ERR</span> <select id="brushes" onload="reload()" onchange="reload()">
+					Preview: <span class="preview" style="color:black">ERR</span> <select id="brushes" onchange="reload()">
 						<option value="0">Load Me!</option>
 					</select><br/>
 					<button id="prevUpdate" onclick="loadCells()">Reload</button>
@@ -86,4 +86,8 @@
 			</div>
 		</div>
 	</div>
+
+	<script>
+		window.onload=reload ; 
+	</script>
 </body>
