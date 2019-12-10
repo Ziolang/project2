@@ -30,7 +30,7 @@ function getAllCells(callback) {
 }
 
 function postCellToDB(cell, callback) {
-	var sql = "INSERT INTO Cells (name, content, color, blocks, durability, pr, mr, detail) VALUES ('";
+	var sql = "INSERT INTO Cells (name, content, color, blocks, durability, pr, mr, img, detail) VALUES ('";
 	sql += cell["name"] + "', '";
 	sql += cell["content"] + "', '";
 	sql += cell["color"] + "', '";
@@ -38,6 +38,7 @@ function postCellToDB(cell, callback) {
 	sql += cell["durability"] + "', '";
 	sql += cell["pr"] + "', '";
 	sql += cell["mr"] + "', '";
+	sql += cell["img"] + "', '";
 	sql += cell["detail"] + "')";
 	pool.query(sql, function(err, res) {
 		if (err) {console.log(err);}

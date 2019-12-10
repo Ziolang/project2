@@ -45,7 +45,7 @@
 					<br><br>
 				</div>
 			</div>
-			<div class="display col-sm-4">
+			<div class="brush col-sm-4">
 					Preview: <span class="preview" style="color:black">ERR</span> <select id="brushes" onchange="reload()">
 						<option value="0">Load Me!</option>
 					</select><br/>
@@ -64,6 +64,18 @@
 					Content: <input type="text" id="content" maxlength="1" size="2" required> 
 					<br/> (A single character to represent the cell. A "." is a cell with no content. Example: A Bridge cell that a unit can enter AND interact with like damaging its durability.)<br/><br/>
 					Color: <input type="color" id="color"><br/> (Very Light colors are not recommended. Black with no content is a standard blank cell.)<br/><br/>
+					Image: <span id="showimg"><img src="fourway.png"></span> <select id="img">
+						<option value="fourway.png">Standard</option>
+						<option value="base.png">Block</option>
+						<option value="pathH.png">Horizontal Path</option>
+						<option value="pathV.png">Vertical Path</option>
+						<option value="liquid.png">Liquid</option>
+						<option value="tree.png">Tree</option>
+						<option value="wall.png">Wall</option>
+						<option value="damaged.png">Damaged Wall</option>
+						<option value="door.png">Door</option>
+						<option value="prism.png">Prism</option>
+					</select>
 					Blocks Movement? <select id="blocks">
 						<option value="true">True</option><option value="false">False</option>
 					</select><br/> (Whether or not a unit can occupy or pass through this cell.)<br/><br/>
@@ -88,6 +100,7 @@
 	</div>
 
 	<script>
-		window.onload=reload ; 
+		window.onload=loadCells ;
+		window.onload=reload ;
 	</script>
 </body>

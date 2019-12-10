@@ -139,6 +139,7 @@ function addCell() {
 	var durability = $('#durability').val();
 	var pr = $('#pr').val();
 	var mr = $('#mr').val();
+	var img = $('#img').val();
 	var detail = $('#detail').val();
 
 	if (name == "") {
@@ -159,6 +160,7 @@ function addCell() {
 		durability: durability,
 		pr: pr,
 		mr: mr,
+		img: img,
 		detail: detail
 	}
 
