@@ -50,7 +50,7 @@ function reload() {
 					content = cell["content"];
 				color = cell["color"];
 				img = cell["img"];
-				$(".preview").html('<img src="' + img +'" style="background-color:' + color + '">');
+				$(".preview").html('<img src=' + img +' style="background-color:' + color + '">');
 			}
 
 			var details = "<h2>" + cell["name"] + " Cell</h2><p>";
@@ -96,6 +96,8 @@ function initImgGrid() {
 	grid += "-<br>";
 
 	$('.grid').html(grid);
+
+	loadCells();
 }
 
 function initGrid() {
@@ -126,6 +128,8 @@ function initGrid() {
 	grid += "-<br>";
 
 	$('.grid').html(grid);
+
+	loadCells();
 }
 
 function applyCell(cell) {
@@ -149,6 +153,8 @@ function loadCells() {
 			$(".details").html("<h2>Blank Cell</h2><p>This cell is a generic, empty, occupiable cell with no properties.</p>");
 		});
 	});
+
+	reload();
 }
 
 function addCell() {
