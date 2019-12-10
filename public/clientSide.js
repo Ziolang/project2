@@ -1,22 +1,28 @@
-var gridType = "text";
+var gridType = "txt";
 
 function reload() {
 	let content;
 	let color;
+	let img;
 	var id = Number($('#brushes').val());
 
 	if (id == -1) {
-		content = "&nbsp&nbsp&nbsp";
-		color = "black";
-		$(".preview").css("color", color);
-		$(".preview").html(content);
-		$(".details").html("<h2>NULL Cell</h2><p>This cell does not exist. NULL cells are used to provide shape, boundaries and non-interactable areas.</p>");
-	}
+		if (gridType == "txt") {
+			$(".preview").css("color", "black");
+			$(".preview").html("&nbsp&nbsp&nbsp");
+		}
+		else {
+			$(".preview").html('<img src="blank.png" style="background-color:white">');
+		}
+		}
 	else if (id == 0) {
-		content = "{ }";
-		color = "black";
-		$(".preview").css("color", color);
-		$(".preview").html(content);
+		if (gridType == "txt") {
+			$(".preview").css("color", "black");
+			$(".preview").html("{ }");
+		}
+		else {
+			$(".preview").html('<img src="fourway.png" style="background-color:white">');
+		}
 		$(".details").html("<h2>Blank Cell</h2><p>This cell is a generic, empty, occupiable cell with no properties.</p>");
 	}
 	else {
@@ -26,14 +32,27 @@ function reload() {
 
 		$.get("/getCell", {cellID:id}, function(cell) {
 			console.log("Got: " + cell["name"]);
-			if (cell["content"] == '.') {
-				content = "{ }";
+
+			if (gridType == "txt") {
+				if (cell["content"] == '.') {
+					content = "{ }";
+				}
+				else
+					content = "{" + cell["content"] + "}";
+				color = cell["color"];
+				$(".preview").css("color", color);
+				$(".preview").html(content);
 			}
-			else
-				content = "{" + cell["content"] + "}";
-			color = cell["color"];
-			$(".preview").css("color", color);
-			$(".preview").html(content);
+
+			if (gridType == "txt") {
+				if (cell["content"] == '.')
+					content = "&nbsp";
+				else
+					content = cell["content"];
+				color = cell["color"];
+				img = cell["img"];
+				$(".preview").html('<img src="' + img +'" style="background-color:' + color + '">');
+			}
 
 			var details = "<h2>" + cell["name"] + " Cell</h2><p>";
 			if (cell["durability"] > 0) {
@@ -51,6 +70,7 @@ function reload() {
 }
 
 function initImgGrid() {
+	gridType = "img";
 	var rows = $("#rows").val();
 	var columns = $("#columns").val();
 	var letter = 'A';
@@ -80,6 +100,7 @@ function initImgGrid() {
 }
 
 function initGrid() {
+	gridType = "txt";
 	var rows = $("#rows").val();
 	var columns = $("#columns").val();
 	var letter = 'A';
