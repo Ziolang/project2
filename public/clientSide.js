@@ -163,7 +163,7 @@ function loadCells() {
 		});
 	});
 
-	reload();
+	loadCells();
 }
 
 function addCell() {
@@ -205,7 +205,7 @@ function addCell() {
 		console.log("made it! With: " + result["succeeds"]);
 	})
 
-	reload();
+	loadCells();
 }
 
 function validate() {
