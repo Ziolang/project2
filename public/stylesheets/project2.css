@@ -80,8 +80,6 @@ body {
 
 .imgCell {
 	cursor: pointer;
-	background:white;
-	color:black;
 	width:7%;
 	height:auto;
 }
