@@ -50,7 +50,7 @@ function reload() {
 					content = cell["content"];
 				color = cell["color"];
 				img = cell["img"];
-				$(".preview").html('<img src=' + img +' style="background-color:' + color + '">');
+				$(".preview").html('<img src="' + img +'" style="background-color:' + color + ';">');
 			}
 
 			var details = "<h2>" + cell["name"] + " Cell</h2><p>";
