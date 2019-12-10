@@ -163,7 +163,7 @@ function loadCells() {
 		});
 	});
 
-	loadCells();
+	reload();
 }
 
 function addCell() {
