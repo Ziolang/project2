@@ -206,7 +206,7 @@ function validate() {
 	}
 }
 
-function imgPreview() {
+function preview() {
 	let val = $("#img").val();
 	let color = $("#color").val();
 	let content = $("#content").val();
