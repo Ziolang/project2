@@ -143,6 +143,16 @@ function applyCell(cell) {
 	$(cell).addClass("cell");
 }
 
+function applyImgCell(cell) {
+	var text = $(".preview").html();
+	var id = $('#brushes').val();
+	
+	$(cell).html(text);
+	$(cell).removeClass();
+	$(cell).addClass(id);
+	$(cell).addClass("imgCell");
+}
+
 function loadCells() {
 	var html = '<option value="-1">NULL</option><option value="0" selected>Blank</option>';
 	$.get("/getCells", function(cells) {
