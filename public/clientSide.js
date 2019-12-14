@@ -95,6 +95,7 @@ function initImgGrid() {
 	grid += "-<br>";
 
 	$('.grid').html(grid);
+	$('#save').html('<button onclick="saveimg()">Save Grid</button>');
 
 	loadCells();
 }
@@ -127,6 +128,7 @@ function initGrid() {
 	grid += "-<br>";
 
 	$('.grid').html(grid);
+	$('#save').html('<button onclick="savetxt()">Save Grid</button>');
 
 	loadCells();
 }
@@ -226,4 +228,13 @@ function preview() {
 	$("#showimg").html('<img src="' + val + '" style="background-color:' + color + '">');
 	$("#showtxt").css("color", color);
 	$("#showtxt").html("{" + content + "}");
+}
+
+function saveimg() {
+	var grid = $('.grid').attr('class');
+	alert(grid);
+
+	//$.get("/saveImg", {grid: grid}, function(cell) {
+
+	//}
 }

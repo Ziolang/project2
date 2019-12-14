@@ -19,12 +19,6 @@ function postCell(req, res) {
 		res.json(result);
 	});
 }
-/*
-	console.log("Made it to Post with: " + values["name"]);
-	cellModel.postCellToDB(values, function(err, result) {
-		res.json(result);
-	})*/
-//}
  
 module.exports = {
 	getCell: getCell,

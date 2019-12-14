@@ -13,7 +13,9 @@
     "body-parser": "^1.19.0",
     "ejs": "^2.7.4",
     "express": "^4.17.1",
+    "html-screen-capture-js": "^1.0.31",
     "nodemon": "^2.0.1",
-    "pg": "^7.12.1"
+    "pg": "^7.12.1",
+    "webshot": "^0.18.0"
   }
 }

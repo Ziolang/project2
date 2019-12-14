@@ -3,6 +3,7 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
 const cellController = require('./controllers/cellcontroller.js')
+const webshot = require('webshot')
 
 express()
 	.use(express.static(path.join(__dirname, 'public')))
@@ -12,6 +13,7 @@ express()
 	.set('view engine', 'ejs')
 	.get('/getCell', cellController.getCell)
 	.get('/getCells', cellController.getCells)
+	.get('/saveImg', saveImg)
 	.post('/postCell', cellController.postCell)
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
@@ -21,3 +23,15 @@ const pool = new Pool(
 	{
 		connectionString: connectionString
 });
+
+function saveImg(req, res){
+	const optionsSelector = {
+  		captureSelector: '.tr-container'
+	};
+
+	webshot('http://www.penta-code.com', 'pentacode-selector.png', optionsSelector, function(err) {
+		if (!err) {
+			console.log('Screenshot taken!');
+		}
+	});
+}
