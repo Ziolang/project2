@@ -13,7 +13,7 @@ express()
 	.set('view engine', 'ejs')
 	.get('/getCell', cellController.getCell)
 	.get('/getCells', cellController.getCells)
-	.get('/saveImg', saveImg)
+	//.get('/saveImg', saveImg)
 	.post('/postCell', cellController.postCell)
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
@@ -23,7 +23,7 @@ const pool = new Pool(
 	{
 		connectionString: connectionString
 });
-
+/*
 function saveImg(req, res){
 	const optionsSelector = {
   		captureSelector: '.tr-container'
@@ -34,4 +34,4 @@ function saveImg(req, res){
 			console.log('Screenshot taken!');
 		}
 	});
-}
+}*/
