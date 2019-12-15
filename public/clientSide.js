@@ -231,9 +231,11 @@ function preview() {
 }
 
 function saveimg() {
-	var grid = $('.grid').attr('class');
-	alert(grid);
 
+	html2canvas($('.grid'), {onrendered: function(canvas){
+		$('#screenshot').html('');
+		$('#screenshot').append(canvas);
+	})
 	//$.get("/saveImg", {grid: grid}, function(cell) {
 
 	//}
