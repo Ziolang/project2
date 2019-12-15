@@ -235,7 +235,7 @@ function saveimg() {
 	html2canvas($('.grid'), {onrendered: function(canvas){
 		$('#screenshot').html('');
 		$('#screenshot').append(canvas);
-	})
+	}});
 	//$.get("/saveImg", {grid: grid}, function(cell) {
 
 	//}
