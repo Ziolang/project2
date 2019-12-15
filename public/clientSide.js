@@ -1,3 +1,5 @@
+const html2canvas = require('html2canvas');
+
 function reload() {
 	let gridType = $('#gridType').val();
 	let content;
