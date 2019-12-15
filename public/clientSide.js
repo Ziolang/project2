@@ -1,3 +1,5 @@
+import html2canvas from 'html2canvas';
+
 function reload() {
 	let gridType = $('#gridType').val();
 	let content;
