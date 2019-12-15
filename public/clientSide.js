@@ -1,4 +1,4 @@
-import html2canvas from 'html2canvas';
+
 
 function reload() {
 	let gridType = $('#gridType').val();
@@ -233,6 +233,7 @@ function preview() {
 }
 
 function saveimg() {
+	import html2canvas from 'html2canvas';
 	var grid = $('.grid').attr('class');
 
 	html2canvas($('.grid'), {onrendered: function(canvas){
