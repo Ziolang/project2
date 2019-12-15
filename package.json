@@ -14,9 +14,11 @@
     "ejs": "^2.7.4",
     "express": "^4.17.1",
     "html-screen-capture-js": "^1.0.31",
+    "html2canvas": "^1.0.0-rc.5",
     "node-webshot": "^1.0.3",
     "nodemon": "^2.0.1",
     "pg": "^7.12.1",
-    "webshot": "^0.18.0"
+    "webshot": "^0.18.0",
+    "yarn": "^1.21.1"
   }
 }

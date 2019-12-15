@@ -3,8 +3,7 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
 const cellController = require('./controllers/cellcontroller.js')
-var htmlScreenCaptureJs = require("html-screen-capture-js")
-const camera = htmlScreenCaptureJs.capture()
+const camera = require("html2canvas")
 
 express()
 	.use(express.static(path.join(__dirname, 'public')))
