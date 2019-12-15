@@ -1,5 +1,3 @@
-const html2canvas = require('html2canvas');
-
 function reload() {
 	let gridType = $('#gridType').val();
 	let content;
@@ -233,6 +231,7 @@ function preview() {
 }
 
 function saveimg() {
+	var grid = $('.grid').attr('class');
 
 	html2canvas($('.grid'), {onrendered: function(canvas){
 			$('#screenshot').html('');
