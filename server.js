@@ -3,7 +3,7 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
 const cellController = require('./controllers/cellcontroller.js')
-const webshot = require('webshot')
+var camera = require("html-screen-capture-js")
 
 express()
 	.use(express.static(path.join(__dirname, 'public')))
@@ -23,15 +23,3 @@ const pool = new Pool(
 	{
 		connectionString: connectionString
 });
-/*
-function saveImg(req, res){
-	const optionsSelector = {
-  		captureSelector: '.tr-container'
-	};
-
-	webshot('http://www.penta-code.com', 'pentacode-selector.png', optionsSelector, function(err) {
-		if (!err) {
-			console.log('Screenshot taken!');
-		}
-	});
-}*/
