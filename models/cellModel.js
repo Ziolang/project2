@@ -68,5 +68,6 @@ console.log("Searching for id: " + id)
 module.exports = {
 	getCellById: getCellById,
 	getAllCells: getAllCells,
-	postCellToDB: postCellToDB
+	postCellToDB: postCellToDB,
+	killCellById: killCellById
 }
