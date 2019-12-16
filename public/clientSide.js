@@ -83,7 +83,7 @@ function initImgGrid() {
 		for (var c = 0; c < columns; c++) {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
-			grid += '<span id="' + position + '" onclick="applyImgCell(this)"><img class="imgCell" src="fourway.png"></span>';
+			grid += '<span id="' + position + '"class="imgCell"  onclick="applyImgCell(this)"><img src="fourway.png"></span>';
 		}
 		grid += " " + letter + "<br/>";
 		letterx++;
