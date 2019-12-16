@@ -12,7 +12,7 @@ express()
 	.set('view engine', 'ejs')
 	.get('/getCell', cellController.getCell)
 	.get('/getCells', cellController.getCells)
-	//.get('/saveImg', saveImg)
+	.get('/killCell', cellController.killCell)
 	.post('/postCell', cellController.postCell)
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

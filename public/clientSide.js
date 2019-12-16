@@ -232,16 +232,14 @@ function preview() {
 	$("#showtxt").html("{" + content + "}");
 }
 
-function saveimg() {
-	import html2canvas from 'html2canvas';
-	var grid = $('.grid').attr('class');
+function deleteCell() {
+	confirm("You are about to permanently delete this cell. Are you sure?");
 
-	html2canvas($('.grid'), {onrendered: function(canvas){
-			$('#screenshot').html('');
-			$('#screenshot').append(canvas);
-		}
+	var id = Number($('#brushes').val());
+
+	$.get("/killCell", {cellID:id}, function(cell) {
+
 	});
-	//$.get("/saveImg", {grid: grid}, function(cell) {
 
-	//}
+	loadCells();
 }

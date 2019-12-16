@@ -52,6 +52,19 @@ function postCellToDB(cell, callback) {
 	});
 }
 
+function killCellById() {
+console.log("Searching for id: " + id)
+	var sql = "DELETE FROM Cells WHERE id = " + id;
+	pool.query(sql, function(err, res) {
+		if (err) {console.log(err);}
+		else {
+			var results = {"success": "true"}
+			console.log(results);
+			callback(null, results);
+		}
+	});
+}
+
 module.exports = {
 	getCellById: getCellById,
 	getAllCells: getAllCells,

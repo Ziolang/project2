@@ -19,9 +19,17 @@ function postCell(req, res) {
 		res.json(result);
 	});
 }
+
+function killCell(req, res) {
+	var cellID = req.query.cellID;
+	cellModel.killCellById(cellID, function(err, result) {
+		res.json(result);
+	});
+}
  
 module.exports = {
 	getCell: getCell,
 	getCells: getCells,
-	postCell: postCell
+	postCell: postCell,
+	killCell: killCell
 }
