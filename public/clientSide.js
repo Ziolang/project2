@@ -227,6 +227,9 @@ function preview() {
 	let color = $("#color").val();
 	let content = $("#content").val();
 
+	if (content == ".")
+		content = "&nbsp";
+
 	$("#showimg").html('<img src="' + val + '" style="background-color:' + color + '">');
 	$("#showtxt").css("color", color);
 	$("#showtxt").html("{" + content + "}");
