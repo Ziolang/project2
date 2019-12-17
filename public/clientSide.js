@@ -291,8 +291,10 @@ function saveGrid() {
 		}
 		letterx++;
 	}
+	var gridstring = JSON.stringify(grid);
 
-	$.post("/saveGrid", {grid:grid}, function(result) {});
+	$('#saved').val(gridstring);
+	//$.post("/saveGrid", {grid:grid}, function(result) {});
 
 	console.log(grid);
 }
