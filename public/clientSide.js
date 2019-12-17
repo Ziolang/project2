@@ -284,14 +284,10 @@ function saveGrid() {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
 			id = $("#" + position).attr("name");
-			grid[positions[position]] = id;
+			grid["positions"][position] = id;
 		}
 		letterx++;
 	}
 
 	console.log(grid);
-
-	/*$.get("/saveGrid", {grid: grid}, function(result) {
-		console.log("made it! With: " + result["succeeds"]);
-	})*/
 }
