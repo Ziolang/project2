@@ -3,6 +3,7 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
 const cellController = require('./controllers/cellcontroller.js')
+var fs = require('fs');
 
 express()
 	.use(express.static(path.join(__dirname, 'public')))
@@ -14,6 +15,7 @@ express()
 	.get('/getCells', cellController.getCells)
 	.post('/killCell', cellController.killCell)
 	.post('/postCell', cellController.postCell)
+	.post('/saveGrid', cellController.saveGrid)
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 

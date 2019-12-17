@@ -1,6 +1,7 @@
 const { Pool } = require('pg');
 const connectionString = process.env.DATABASE_URL || "postgres://lsetltiaqifutt:a9820380e07bcefd62806e966634d27a4d57723db2509436a8f7bcab71279927@ec2-174-129-253-174.compute-1.amazonaws.com:5432/denvgq60nkajt6?ssl=true";
 const pool = new Pool({connectionString: connectionString });
+var fs = require('fs');
 
 function getCellById(id, callback) {
 	console.log("Searching for id: " + id)
@@ -65,9 +66,15 @@ console.log("Searching for id: " + id)
 	});
 }
 
+function save(grid, callback) {
+	var gridstring = JSON.stringify(grid);
+	fs.writeFile("grid.json", gridstring);
+}
+
 module.exports = {
 	getCellById: getCellById,
 	getAllCells: getAllCells,
 	postCellToDB: postCellToDB,
-	killCellById: killCellById
+	killCellById: killCellById,
+	save: save
 }

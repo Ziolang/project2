@@ -27,9 +27,17 @@ function killCell(req, res) {
 	});
 }
  
+function saveGrid(req, res) {
+	var grid = req.body.grid;
+	cellModel.save(grid, function(err, result) {
+		res.json(result);
+	});
+}
+
 module.exports = {
 	getCell: getCell,
 	getCells: getCells,
 	postCell: postCell,
-	killCell: killCell
+	killCell: killCell,
+	saveGrid: saveGrid
 }
