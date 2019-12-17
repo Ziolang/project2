@@ -335,7 +335,7 @@ function applyJson() {
 		for (var c = 0; c < grid["columns"]; c++) {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
-			item = "#" + position;
+			item = '"#' + position + '"';
 			id = $(item).attr("name");
 
 			console.log(item + " and " + id);
