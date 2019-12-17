@@ -84,7 +84,7 @@ function initImgGrid() {
 		for (var c = 0; c < columns; c++) {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
-			grid += '<span id="' + position + '" class="imgCell" onclick="applyImgCell(this)"><img style="background-color:white;" src="fourway.png"></span>';
+			grid += '<span id="' + position + '" name="0" class="imgCell" onclick="applyImgCell(this)"><img style="background-color:white;" src="fourway.png"></span>';
 		}
 		grid += " " + letter + "<br/>";
 		letterx++;
@@ -117,7 +117,7 @@ function initGrid() {
 		for (var c = 0; c < columns; c++) {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
-			grid += '<span class="cell" id="' + position + '" onclick="applyCell(this)">{ }</span> ';
+			grid += '<span name="0" class="cell" id="' + position + '" onclick="applyCell(this)">{ }</span> ';
 		}
 		grid += " " + letter + "<br/>";
 		letterx++;
@@ -144,7 +144,7 @@ function applyCell(cell) {
 	$(cell).css("color", color);
 	$(cell).html(text);
 	$(cell).removeClass();
-	$(cell).addClass(id);
+	$(cell).attr("name", id);
 	$(cell).addClass("cell");
 }
 
@@ -154,7 +154,7 @@ function applyImgCell(cell) {
 	
 	$(cell).html(text);
 	$(cell).removeClass();
-	$(cell).addClass(id);
+	$(cell).attr("name", id);
 	$(cell).addClass("imgCell");
 }
 
@@ -282,10 +282,8 @@ function saveGrid() {
 		for (var c = 0; c < columns; c++) {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
-			id = $("#" + position);
-			$(id).removeClass("imgCell");
-			$(id).removeClass("cell");
-			grid[position] = $(id).attr("class");
+			id = $("#" + position).attr("name");
+			grid[position] = id;
 		}
 		letterx++;
 	}
