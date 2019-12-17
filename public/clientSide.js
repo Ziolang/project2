@@ -321,9 +321,9 @@ function applyJson() {
 	$('#columns').val(grid["columns"]).prop("selected", true);
 	$('#gridname').val(grid["name"]);
 
-	console.log("data: " + grid.positions);
+	console.log("data: " + grid["positions"]);
 
-	grid.positions.forEach(function(pos) { //where pos is position
+	grid["positions"].forEach(function(pos) { //where pos is position
 		var cellID = Number(pos);/*
 		if (gridType == "txt") {
 			$.get("/getCell", {cellID:id}, function(cell) {
