@@ -276,7 +276,10 @@ function saveGrid() {
 	var grid = { 
 			"name" : gridname,
 			"rows" : rows,
-			"columns" : columns
+			"columns" : columns,
+			"positions" : {
+				
+			}
 	};
 
 	for (var r = 0; r < rows; r++) {
