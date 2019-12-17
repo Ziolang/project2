@@ -17,6 +17,12 @@ VALUES
 	(DEFAULT, 'Wall', 'W', '#8f8f8f', true, 100, 'High.', 'High', 'wall.png', 'A solid obsticle. It could be damaged, but it looks pretty sturdy.'),
 	(DEFAULT, 'Door', 'D', '#8f8f8f', true, 100, 'Low.', 'Low.', 'door.png', 'It can be opened.');
 
+CREATE TABLE Grids (
+	id SERIAL NOT NULL PRIMARY KEY,
+	name varchar(100) NOT NULL,
+	rows int NOT NULL,
+	columns int NOT NULL
+);
 
 CREATE TABLE Positions ( 
 	id SERIAL NOT NULL PRIMARY KEY, 
@@ -24,15 +30,3 @@ CREATE TABLE Positions (
 	cell_id int REFERENCES Cells(id), 
 	grid_name varchar(100) NOT NULL
 );
-
-INSERT INTO Positions
-VALUES 
-	(DEFAULT, 'A1', 1, 'Sample'),
-	(DEFAULT, 'B2', 1, 'Sample'),
-	(DEFAULT, 'C3', 1, 'Sample'),
-	(DEFAULT, 'D4', 1, 'Sample'),
-	(DEFAULT, 'E5', 1, 'Sample'),
-	(DEFAULT, 'F6', 1, 'Sample'),
-	(DEFAULT, 'G7', 1, 'Sample'),
-	(DEFAULT, 'H8', 1, 'Sample'),
-	(DEFAULT, 'I9', 1, 'Sample');

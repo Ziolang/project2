@@ -282,8 +282,10 @@ function saveGrid() {
 		for (var c = 0; c < columns; c++) {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
-			id = $("#" + position).val();
-			grid[position] = id;
+			id = $("#" + position);
+			$(id).removeClass("imgCell");
+			$(id).removeClass("cell");
+			grid[position] = $(id).attr("class");
 		}
 		letterx++;
 	}
