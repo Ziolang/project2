@@ -322,9 +322,12 @@ function applyJson() {
 	$('#gridname').val(grid["name"]);
 
 	var cell;
+	var letter = 'A';
+	var letterx = 65;
+	var position = '';
 
-	for (var r = 0; r < grid["columns"]; r++) {
-		for (var c = 0; c < columns; c++) {
+	for (var r = 0; r < grid["rows"]; r++) {
+		for (var c = 0; c < grid["columns"]; c++) {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
 			
