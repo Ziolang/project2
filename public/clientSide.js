@@ -338,7 +338,7 @@ function applyJson() {
 			item = '#' + position;
 			id = grid["positions"][position];
 
-			console.log(item + " and " + id);
+			console.log(position + " and " + item + " and " + id);
 			if (id == -1) {
 				if (gridType == "txt") {
 					$(item).css("color", "black");
