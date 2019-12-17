@@ -98,7 +98,7 @@ function initImgGrid() {
 	grid += "-<br>";
 
 	$('.grid').html(grid);
-	$('#save').html('<button onclick="saveimg()">Save Grid</button>');
+	$('#save').html('Name your grid: <input id="gridname" type="text"><button onclick="saveGrid()">Save Grid</button>');
 
 	loadCells();
 }
@@ -131,7 +131,7 @@ function initGrid() {
 	grid += "-<br>";
 
 	$('.grid').html(grid);
-	$('#save').html('<button onclick="savetxt()">Save Grid</button>');
+	$('#save').html('Name your grid: <input id="gridname" type="text"><button onclick="saveGrid()">Save Grid</button>');
 
 	loadCells();
 }
@@ -266,5 +266,31 @@ function deleteCell() {
 }
 
 function saveGrid() {
+	var gridname = $('#gridname');
+	var id;
+	var rows = $("#rows").val();
+	var columns = $("#columns").val();
+	var letter = 'A';
+	var letterx = 65;
+	var position = '';
+	var grid = { 
+		"rows" : rows,
+		"columns" : columns
+	};
 
+	for (var r = 0; r < rows; r++) {
+		for (var c = 0; c < columns; c++) {
+			letter = String.fromCharCode(letterx);
+			position = letter + (c + 1);
+			id = $("#" + position).val();
+			grid[position] = id;
+		}
+		letterx++;
+	}
+
+	console.log(grid);
+
+	/*$.get("/saveGrid", {grid: grid}, function(result) {
+		console.log("made it! With: " + result["succeeds"]);
+	})*/
 }
