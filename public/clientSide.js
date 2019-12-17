@@ -312,7 +312,21 @@ function copy() {
 }
 
 function applyJson() {
+	let gridType = $('#gridType').val();
 	var grid = JSON.parse($('#saved'));
+	$('#rows').val(grid["rows"]);
+	$('#columns').val(grid["columns"]);
+	$('#gridname').val(grid["name"]);
 
-	console.log(grid);
+	grid.postitions.forEach(function(pos) { //where pos is position
+		var cellID = Number(pos);/*
+		if (gridType == "txt") {
+			$.get("/getCell", {cellID:id}, function(cell) {
+			})
+		}
+		else {
+			applyImgCell(cell);
+		}
+	})*/
+	console.log(cellID);
 }
