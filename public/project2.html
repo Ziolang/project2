@@ -42,7 +42,7 @@
 					<option value="10">10</option>
 					<option value="11">11</option>
 					<option value="12">12</option>	
-				</select> Columns <br/> <button onclick="initGrid()">Generate Text Grid</button> <button onclick="initImgGrid()">Generate Image Grid</button><br/>
+				</select> Columns <br/> <button onclick="initGrid()">Generate Text Grid</button> <button onclick="initImgGrid()">Generate Image Grid</button><br/><br/>
 				<div class="grid">
 					Grid Not Initialized. Select a size and click Apply.
 					<br><br>
@@ -71,7 +71,6 @@
 			<div class="row">
 				<div class="display col-sm-12">
 					<h2 class="centered">Create New Cell</h2>
-					<form id="newcell">
 					Name: <input type="text" id="name" required> (Whatever you want the cell to be called.)<br/><br/>
 
 					<h4 class="centered">Appearance</h4>
@@ -111,7 +110,6 @@
 					Additional Details:<br/>
 					<textarea id="detail" rows="5" cols="80" placeholder='Here you can specify Flavor text, extra rules such as "A unit takes 3 damage when they enter this cell", and pretty much anything extra you can conceive of. Just keep in mind that good grammar/punctuation will help the database display it better.'></textarea><br/><br/>
 					<button onclick="addCell()">Submit</button>
-				</form>
 				</div>
 			</div>
 		</div>

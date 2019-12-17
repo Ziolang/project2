@@ -223,7 +223,6 @@ function addCell() {
 	})
 
 	alert("Successfully added " + name + " Cell to the database!");
-	$('#newcell').reset();
 
 	loadCells();
 }
