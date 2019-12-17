@@ -321,17 +321,16 @@ function applyJson() {
 	$('#columns option[value="' + grid["columns"] + '"]').prop("selected", true);
 	$('#gridname').val(grid["name"]);
 
-	console.log("grid: " + grid["positions"]);
+	var cell;
 
-	grid["positions"].forEach(function(pos) { //where pos is position
-		var cellID = Number(pos);/*
-		if (gridType == "txt") {
-			$.get("/getCell", {cellID:id}, function(cell) {
-			})
+	for (var r = 0; r < grid["columns"]; r++) {
+		for (var c = 0; c < columns; c++) {
+			letter = String.fromCharCode(letterx);
+			position = letter + (c + 1);
+			
+			console.log(grid["positions"][position]);
 		}
-		else {
-			applyImgCell(cell);
-		}*/
-	})
+		letterx++;
+	}
 	console.log(cellID);
 }
