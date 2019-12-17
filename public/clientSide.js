@@ -301,7 +301,7 @@ function saveGrid() {
 }
 
 function copy() {
-	var grid = $('#saved');
+	var grid = document.getElementById("saved");
 
 	grid.select();
 	grid.setSelectionRange(0, 99999);
