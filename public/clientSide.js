@@ -335,7 +335,7 @@ function applyJson() {
 		for (var c = 0; c < grid["columns"]; c++) {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
-			item = '"#' + position + '"';
+			item = '#' + position;
 			id = $(item).attr("name");
 
 			console.log(item + " and " + id);
@@ -370,11 +370,11 @@ function applyJson() {
 						color = cell["color"];
 						name = cell["id"];
 						
-						$(cell).css("color", color);
-						$(cell).html(content);
-						$(cell).removeClass();
-						$(cell).attr("name", name);
-						$(cell).addClass("cell");
+						$(item).css("color", color);
+						$(item).html(content);
+						$(item).removeClass();
+						$(item).attr("name", name);
+						$(item).addClass("cell");
 					}
 					else {
 					}
