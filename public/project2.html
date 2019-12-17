@@ -62,11 +62,18 @@
 				</div>
 				<div class="display col-sm-8">
 					<h2 class="centered">Create New Cell</h2>
-					Text Preview: <span id="showtxt" class="preview2">{ }</span> &nbsp&nbsp&nbspImage Preview: <span id="showimg"><img src="fourway.png" style="background-color:white"></span><br/><br/>
+					<form id="newcell">
 					Name: <input type="text" id="name" required> (Whatever you want the cell to be called.)<br/><br/>
+
+					<h4 class="centered">Appearance</h4>
+
+					Text Preview: <span id="showtxt" class="preview2">{ }</span> &nbsp&nbsp&nbspImage Preview: <span id="showimg"><img src="fourway.png" style="background-color:white"></span><br/><br/>
+
 					Text Content: <input type="text" id="content" maxlength="1" size="2" onchange="preview()" required> 
-					<br/> (A single character to represent the cell. A "." is a cell with no content. Example: A Bridge cell that a unit can enter AND interact with like damaging its durability.)<br/><br/>
-					Color: <input type="color" id="color" onchange="preview()"><br/> (Very Light colors and very dark colors are not recommended.)<br/>
+					<br/> 
+					(A single character to represent the cell. A "." is a cell with no content. Example: A Bridge cell that a unit can enter AND interact with like damaging its durability.)<br/><br/>
+
+					Color: <input type="color" id="color" onchange="preview()">&nbsp&nbsp&nbsp&nbsp
 					Cell Image: <select id="img" onchange="preview()">
 						<option value="fourway.png">Standard</option>
 						<option value="base.png">Block</option>
@@ -95,6 +102,7 @@
 					Additional Details:<br/>
 					<textarea id="detail" rows="5" cols="80" placeholder='Here you can specify Flavor text, extra rules such as "A unit takes 3 damage when they enter this cell", and pretty much anything extra you can conceive of. Just keep in mind that good grammar/punctuation will help the database display it better.'></textarea><br/><br/>
 					<button onclick="addCell()">Submit</button>
+				</form>
 				</div>
 				<div class="col-sm-2">
 				</div>

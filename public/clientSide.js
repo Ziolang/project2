@@ -15,7 +15,8 @@ function reload() {
 		else {
 			$(".preview").html('<img src="blank.png" style="background-color:white">');
 		}
-		}
+		$(".details").html("<h2>Blank Cell</h2><p>This cell is a generic, empty, occupiable cell with no properties.</p>");
+	}
 	else if (id == 0) {
 		if (gridType == "txt") {
 			$(".preview").css("color", "black");
@@ -24,7 +25,7 @@ function reload() {
 		else {
 			$(".preview").html('<img src="fourway.png" style="background-color:white">');
 		}
-		$(".details").html("<h2>Blank Cell</h2><p>This cell is a generic, empty, occupiable cell with no properties.</p>");
+		$(".details").html("<h2>NULL Cell</h2><p>This cell does not exist. It can't be entered, interacted with or passed through. NULL Cells are best used for giving a grid a less square shape.</p>");
 	}
 	else {
 		console.log("Searching by ID");
@@ -217,6 +218,9 @@ function addCell() {
 		console.log("made it! With: " + result["succeeds"]);
 	})
 
+	alert("Successfully added " + name + " Cell to the database!");
+	$('#newcell').reset();
+
 	loadCells();
 }
 
@@ -244,10 +248,15 @@ function preview() {
 }
 
 function deleteCell() {
+	var id = Number($('#brushes').val());
+	
+	if (id <= 0) {
+		alert("You cannot delete NULL or Blank cells.");
+		return;
+	}
+
 	if (confirm("You are about to permanently delete this cell. Are you sure?") == false)
 		return;
-
-	var id = Number($('#brushes').val());
 
 	$.post("/killCell", {id:id}, function(result) {
 		console.log("made it! With: " + result["succeeds"]);
