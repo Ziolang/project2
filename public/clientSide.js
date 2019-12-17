@@ -317,9 +317,11 @@ function applyJson() {
 	console.log("data: " + grid);
 	//var grid = JSON.parse(data);
 	//console.log("grid: " + grid);
-	$('#rows').val(grid["rows"]);
-	$('#columns').val(grid["columns"]);
+	$('#rows').val(grid["rows"]).prop("selected", true);
+	$('#columns').val(grid["columns"]).prop("selected", true);
 	$('#gridname').val(grid["name"]);
+
+	console.log("data: " + grid.positions);
 
 	grid.positions.forEach(function(pos) { //where pos is position
 		var cellID = Number(pos);/*
