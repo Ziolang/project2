@@ -326,7 +326,7 @@ function applyJson() {
 		}
 		else {
 			applyImgCell(cell);
-		}
-	})*/
+		}*/
+	})
 	console.log(cellID);
 }
