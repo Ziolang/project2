@@ -146,6 +146,7 @@ function applyCell(cell) {
 	$(cell).removeClass();
 	$(cell).attr("name", id);
 	$(cell).addClass("cell");
+	saveGrid();
 }
 
 function applyImgCell(cell) {
@@ -156,6 +157,7 @@ function applyImgCell(cell) {
 	$(cell).removeClass();
 	$(cell).attr("name", id);
 	$(cell).addClass("imgCell");
+	saveGrid();
 }
 
 function loadCells() {
@@ -177,7 +179,6 @@ function loadCells() {
 	});
 
 	reload();
-	saveGrid();
 }
 
 function addCell() {
@@ -334,7 +335,7 @@ function applyJson() {
 		for (var c = 0; c < grid["columns"]; c++) {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
-			item = $("#" + position);
+			item = "#" + position;
 			id = item.attr("name");
 			if (id == -1) {
 				if (gridType == "txt") {
