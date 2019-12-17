@@ -317,9 +317,7 @@ function copy() {
 function applyJson() {
 	let gridType = $('#gridType').val();
 	var data = $('#saved').val();
-	console.log("data: " + data);
 	var grid = JSON.parse(data);
-	console.log("grid: " + grid);
 	$('#rows option[value="' + grid["rows"] + '"]').prop("selected", true);
 	$('#columns option[value="' + grid["columns"] + '"]').prop("selected", true);
 	$('#gridname').val(grid["name"]);
@@ -328,9 +326,9 @@ function applyJson() {
 	var letter = 'A';
 	var letterx = 65;
 	var position = '';
-	let content;
-	let color;
-	let img;
+	var content;
+	var color;
+	var img;
 	var item;
 
 	for (var r = 0; r < grid["rows"]; r++) {
@@ -339,6 +337,8 @@ function applyJson() {
 			position = letter + (c + 1);
 			item = "#" + position;
 			id = $(item).attr("name");
+
+			console.log(item + " and " + id);
 			if (id == -1) {
 				if (gridType == "txt") {
 					$(item).css("color", "black");
