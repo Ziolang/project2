@@ -177,6 +177,7 @@ function loadCells() {
 	});
 
 	reload();
+	saveGrid();
 }
 
 function addCell() {
