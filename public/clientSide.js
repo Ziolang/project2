@@ -362,23 +362,21 @@ function applyJson() {
 				$.get("/getCell", {cellID:id}, function(cell) {
 					console.log("found: " + cell["name"]);
 					if (gridType == "txt") {
-						if (cell["content"] == '.') {
+						if (cell["content"] == '.') 
 							content = "{ }";
-						}
-						else
+						else 
 							content = "{" + cell["content"] + "}";
+
 						color = cell["color"];
-						$(item).css("color", color);
-						$(item).html(content);
+						name = cell["id"];
+						
+						$(cell).css("color", color);
+						$(cell).html(content);
+						$(cell).removeClass();
+						$(cell).attr("name", name);
+						$(cell).addClass("cell");
 					}
 					else {
-						if (cell["content"] == '.')
-							content = "&nbsp";
-						else
-							content = cell["content"];
-						color = cell["color"];
-						img = cell["img"];
-						$(item).html('<img src="' + img +'" style="background-color:' + color + ';">');
 					}
 				})
 			}   

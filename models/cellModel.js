@@ -9,9 +9,7 @@ function getCellById(id, callback) {
 	pool.query(sql, function(err, res) {
 		if (err) {console.log(err);}
 		else {
-			console.log(res);
 			var results = res.rows[0];
-			console.log(results);
 			callback(null, results);
 		}
 	});
@@ -22,9 +20,7 @@ function getAllCells(callback) {
 	pool.query(sql, function(err, res) {
 		if (err) {console.log(err);}
 		else {
-			console.log(res);
 			var results = res.rows;
-			console.log(results);
 			callback(null, results);
 		}
 	});
