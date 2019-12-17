@@ -274,8 +274,11 @@ function saveGrid() {
 	var letterx = 65;
 	var position = '';
 	var grid = { 
-		"rows" : rows,
-		"columns" : columns
+		gridname : {
+			"name" : gridname,
+			"rows" : rows,
+			"columns" : columns
+		}
 	};
 
 	for (var r = 0; r < rows; r++) {
@@ -283,7 +286,7 @@ function saveGrid() {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
 			id = $("#" + position).attr("name");
-			grid[position] = id;
+			grid[gridname[position]] = id;
 		}
 		letterx++;
 	}
