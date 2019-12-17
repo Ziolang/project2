@@ -321,19 +321,65 @@ function applyJson() {
 	$('#columns option[value="' + grid["columns"] + '"]').prop("selected", true);
 	$('#gridname').val(grid["name"]);
 
-	var cell;
+	var id;
 	var letter = 'A';
 	var letterx = 65;
 	var position = '';
+	let gridType = $('#gridType').val();
+	let content;
+	let color;
+	let img;
+	var item;
 
 	for (var r = 0; r < grid["rows"]; r++) {
 		for (var c = 0; c < grid["columns"]; c++) {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
-			
-			console.log(grid["positions"][position]);
+			item = $("#" + position);
+			id = item.attr("name");
+			if (id == -1) {
+				if (gridType == "txt") {
+					$(item).css("color", "black");
+					$(item).html("&nbsp&nbsp&nbsp");
+				}
+				else {
+					$(item).html('<img src="blank.png" style="background-color:white">');
+				}
+			}
+			else if (id == 0) {
+				if (gridType == "txt") {
+					$(item).css("color", "black");
+					$(item).html("{ }");
+				}
+				else {
+					$(item).html('<img src="fourway.png" style="background-color:white">');
+				}
+				
+			}
+			else {
+				$.get("/getCell", {cellID:id}, function(cell) {
+					if (gridType == "txt") {
+						if (cell["content"] == '.') {
+							content = "{ }";
+						}
+						else
+							content = "{" + cell["content"] + "}";
+						color = cell["color"];
+						$(item).css("color", color);
+						$(item).html(content);
+					}
+					else {
+						if (cell["content"] == '.')
+							content = "&nbsp";
+						else
+							content = cell["content"];
+						color = cell["color"];
+						img = cell["img"];
+						$(item).html('<img src="' + img +'" style="background-color:' + color + ';">');
+					}
+				})
+			}   
 		}
 		letterx++;
 	}
-	console.log(cellID);
 }
