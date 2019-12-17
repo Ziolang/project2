@@ -313,7 +313,7 @@ function copy() {
 
 function applyJson() {
 	let gridType = $('#gridType').val();
-	var grid = JSON.parse($('#saved'));
+	var grid = $('#saved');
 	$('#rows').val(grid["rows"]);
 	$('#columns').val(grid["columns"]);
 	$('#gridname').val(grid["name"]);
