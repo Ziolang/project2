@@ -158,12 +158,20 @@ function applyImgCell(cell) {
 }
 
 function loadCells() {
+	let gridType = $('#gridType').val();
 	var html = '<option value="-1">NULL</option><option value="0" selected>Blank</option>';
 	$.get("/getCells", function(cells) {
 		cells.forEach((cell) => {
 			html += '<option value="' + cell["id"] + '">' + cell["name"] + '</option>';
 			$('#brushes').html(html);
 			$(".details").html("<h2>Blank Cell</h2><p>This cell is a generic, empty, occupiable cell with no properties.</p>");
+			if (gridType == "txt") {
+				$(".preview").css("color", "black");
+				$(".preview").html("{ }");
+			}
+			else {
+				$(".preview").html('<img src="fourway.png" style="background-color:white">');
+			}
 		});
 	});
 
