@@ -67,7 +67,7 @@ function reload() {
 			details += "Details: " + cell["detail"] + "</p>";
 			$(".details").html(details);
 		})
-	}	
+	}   
 }
 
 function initImgGrid() {
@@ -296,6 +296,23 @@ function saveGrid() {
 
 	$('#saved').val(gridstring);
 	//$.post("/saveGrid", {grid:grid}, function(result) {});
+
+	console.log(grid);
+}
+
+function copy() {
+	var grid = $('#saved');
+
+	grid.select();
+	grid.setSelectionRange(0, 99999);
+
+	document.execCommand("copy");
+
+	alert("Copied grid file to clipboard. Save it to any text file.");
+}
+
+function applyJson() {
+	var grid = JSON.parse($('#saved'));
 
 	console.log(grid);
 }
