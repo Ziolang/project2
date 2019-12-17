@@ -336,7 +336,7 @@ function applyJson() {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
 			item = '#' + position;
-			id = $(item).attr("name");
+			id = grid["positions"][position];
 
 			console.log(item + " and " + id);
 			if (id == -1) {
