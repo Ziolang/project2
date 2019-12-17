@@ -313,15 +313,15 @@ function copy() {
 
 function applyJson() {
 	let gridType = $('#gridType').val();
-	var grid = $('#saved').val();
-	console.log("data: " + grid);
-	//var grid = JSON.parse(data);
-	//console.log("grid: " + grid);
+	var data = $('#saved').val();
+	console.log("data: " + data);
+	var grid = JSON.parse(data);
+	console.log("grid: " + grid);
 	$('#rows option[value="' + grid["rows"] + '"]').prop("selected", true);
 	$('#columns option[value="' + grid["columns"] + '"]').prop("selected", true);
 	$('#gridname').val(grid["name"]);
 
-	console.log("data: " + grid["positions"]);
+	console.log("grid: " + grid["positions"]);
 
 	grid["positions"].forEach(function(pos) { //where pos is position
 		var cellID = Number(pos);/*
