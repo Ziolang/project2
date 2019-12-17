@@ -360,6 +360,7 @@ function applyJson() {
 			}
 			else {
 				$.get("/getCell", {cellID:id}, function(cell) {
+					console.log("found: " + cell["name"]);
 					if (gridType == "txt") {
 						if (cell["content"] == '.') {
 							content = "{ }";
