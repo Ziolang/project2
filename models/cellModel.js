@@ -52,7 +52,7 @@ function postCellToDB(cell, callback) {
 	});
 }
 
-function killCellById() {
+function killCellById(id, callback) {
 console.log("Searching for id: " + id)
 	var sql = "DELETE FROM Cells WHERE id = " + id;
 	pool.query(sql, function(err, res) {

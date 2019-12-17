@@ -241,7 +241,7 @@ function deleteCell() {
 
 	var id = Number($('#brushes').val());
 
-	$.post("/killCell", {cellID:id}, function(result) {
+	$.post("/killCell", {id:id}, function(result) {
 		console.log("made it! With: " + result["succeeds"]);
 	});
 

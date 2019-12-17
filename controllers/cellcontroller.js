@@ -21,7 +21,7 @@ function postCell(req, res) {
 }
 
 function killCell(req, res) {
-	var cellID = req.body.cellID;
+	var cellID = req.body.id;
 	cellModel.killCellById(cellID, function(err, result) {
 		res.json(result);
 	});
