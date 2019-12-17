@@ -101,6 +101,7 @@ function initImgGrid() {
 	$('#save').html('Name your grid: <input id="gridname" type="text"><button onclick="saveGrid()">Save Grid</button>');
 
 	loadCells();
+	saveGrid();
 }
 
 function initGrid() {
@@ -134,6 +135,7 @@ function initGrid() {
 	$('#save').html('Name your grid: <input id="gridname" type="text"><button onclick="saveGrid()">Save Grid</button>');
 
 	loadCells();
+	saveGrid();
 }
 
 function applyCell(cell) {
@@ -336,7 +338,7 @@ function applyJson() {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
 			item = "#" + position;
-			id = item.attr("name");
+			id = $(item).attr("name");
 			if (id == -1) {
 				if (gridType == "txt") {
 					$(item).css("color", "black");
