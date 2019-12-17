@@ -377,6 +377,7 @@ function applyJson() {
 						$(item).addClass("cell");
 					}
 					else {
+						$(item).html('<img src="' + cell["img"] + '" style="background-color:' + cell["color"] + '">');
 					}
 				})
 			}   
