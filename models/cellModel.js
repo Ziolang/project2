@@ -62,19 +62,9 @@ console.log("Searching for id: " + id)
 	});
 }
 
-function save(grid, callback) {
-	var gridstring = JSON.stringify(grid);
-	fs.writeFile("grid.json", gridstring);
-	var result = {
-			succeeds: "true",
-		}
-	callback(null, result);
-}
-
 module.exports = {
 	getCellById: getCellById,
 	getAllCells: getAllCells,
 	postCellToDB: postCellToDB,
-	killCellById: killCellById,
-	save: save
+	killCellById: killCellById
 }

@@ -15,7 +15,6 @@ express()
 	.get('/getCells', cellController.getCells)
 	.post('/killCell', cellController.killCell)
 	.post('/postCell', cellController.postCell)
-	.post('/saveGrid', cellController.saveGrid)
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 

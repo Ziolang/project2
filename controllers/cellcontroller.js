@@ -26,16 +26,10 @@ function killCell(req, res) {
 		res.json(result);
 	});
 }
- 
-function saveGrid(req, res) {
-	var grid = req.body.grid;
-	console.log(grid);
-}
 
 module.exports = {
 	getCell: getCell,
 	getCells: getCells,
 	postCell: postCell,
-	killCell: killCell,
-	saveGrid: saveGrid
+	killCell: killCell
 }
