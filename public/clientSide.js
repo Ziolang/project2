@@ -266,7 +266,7 @@ function deleteCell() {
 }
 
 function saveGrid() {
-	var gridname = $('#gridname');
+	var gridname = $('#gridname').val();
 	var id;
 	var rows = $("#rows").val();
 	var columns = $("#columns").val();
@@ -274,7 +274,6 @@ function saveGrid() {
 	var letterx = 65;
 	var position = '';
 	var grid = { 
-		gridname : {
 			"name" : gridname,
 			"rows" : rows,
 			"columns" : columns
@@ -286,7 +285,7 @@ function saveGrid() {
 			letter = String.fromCharCode(letterx);
 			position = letter + (c + 1);
 			id = $("#" + position).attr("name");
-			grid[gridname[position]] = id;
+			grid[positions[position]] = id;
 		}
 		letterx++;
 	}
