@@ -236,13 +236,18 @@ function preview() {
 }
 
 function deleteCell() {
-	confirm("You are about to permanently delete this cell. Are you sure?");
+	if (confirm("You are about to permanently delete this cell. Are you sure?") == false)
+		return;
 
 	var id = Number($('#brushes').val());
 
-	$.get("/killCell", {cellID:id}, function(cell) {
-
+	$.post("/killCell", {cellID:id}, function(result) {
+		console.log("made it! With: " + result["succeeds"]);
 	});
 
 	loadCells();
+}
+
+function saveGrid() {
+
 }
