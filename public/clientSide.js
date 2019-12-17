@@ -297,7 +297,7 @@ function saveGrid() {
 	$('#saved').val(gridstring);
 	//$.post("/saveGrid", {grid:grid}, function(result) {});
 
-	console.log(grid);
+	//console.log(grid);
 }
 
 function copy() {
@@ -313,13 +313,15 @@ function copy() {
 
 function applyJson() {
 	let gridType = $('#gridType').val();
-	var data = $('#saved').val()
+	var data = $('#saved').val();
+	console.log("data: " + data);
 	var grid = JSON.parse(data);
+	console.log("grid: " + grid);
 	$('#rows').val(grid["rows"]);
 	$('#columns').val(grid["columns"]);
 	$('#gridname').val(grid["name"]);
 
-	grid.postitions.forEach(function(pos) { //where pos is position
+	grid.positions.forEach(function(pos) { //where pos is position
 		var cellID = Number(pos);/*
 		if (gridType == "txt") {
 			$.get("/getCell", {cellID:id}, function(cell) {
