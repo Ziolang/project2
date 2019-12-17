@@ -325,7 +325,6 @@ function applyJson() {
 	var letter = 'A';
 	var letterx = 65;
 	var position = '';
-	let gridType = $('#gridType').val();
 	let content;
 	let color;
 	let img;
