@@ -29,6 +29,7 @@ function killCell(req, res) {
  
 function saveGrid(req, res) {
 	var grid = req.body.grid;
+	console.log(grid);
 	cellModel.save(grid, function(err, result) {
 		res.json(result);
 	});

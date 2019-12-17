@@ -292,8 +292,7 @@ function saveGrid() {
 		letterx++;
 	}
 
-	$.post("/saveGrid", {grid:grid}, function(result) {
-	});
+	$.post("/saveGrid", {grid:grid}, function(result) {});
 
 	console.log(grid);
 }
